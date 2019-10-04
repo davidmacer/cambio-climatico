@@ -8,6 +8,12 @@ all: \
 # II. Declaración de las variables
 # ===========================================================================
 # Variables de datos
+
+define renderLatex
+cd $(<D) && pdflatex $(<F)
+cd $(<D) && pdflatex $(<F)
+endef
+
 ncVariablesOceanograficas = \
 	inst/extdata/temperatura_superficial_mar.nc \
 	inst/extdata/clorofila.nc
@@ -60,17 +66,15 @@ reports/baja_california_pattern_of_the_blob.pdf: reports/baja_california_pattern
 	$(pngDiagramaHovmollerAnomaliasPacificoNorte) \
 	$(pngAnoTipicoPacificoNorte) \
 	$(pngAnomaliaMensualEstandarizadaPacificoNorte)
-	cd reports && pdflatex $(<F)
-	cd reports && pdflatex $(<F)
+	$(renderLatex)
 
 reports/impacts_of_climate_change_on_mexican_islands.pdf: reports/impacts_of_climate_change_on_mexican_islands.tex \
 	$(pngNumeroTotalEspeciesPorAreaTodasIslas) \
 	$(pngSuperficiePerdidaIncrementoNivelMarTodasIslas) \
 	$(pngEspeciesAreaPerdidaIslasGolfoMexicoMarCaribe) \
 	$(pngEspeciesPerdidasIncrementoNivelMarTodasIslas) 
-	cd reports && pdflatex $(<F)
-	cd reports && pdflatex $(<F)
-
+	$(renderLatex)
+	
 # IV. Reglas para construir las dependencias de los objetivos principales
 # ===========================================================================
 #Construye dependencias para el artículo del blob
