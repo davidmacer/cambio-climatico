@@ -1,0 +1,9 @@
+image: islasgeci/base:2d95
+
+pipelines:
+  default:
+    - step:
+        script:
+          - make requirements
+          - make
+          - make tests

@@ -1,0 +1,789 @@
+\documentclass{article} % El documento es de tipo artículo
+% A partir de aquí comienza el archivo que describe resultados para el segundo
+% Paquetes útiles para la configuración del documento (lenguaje, acentos, márgenes).
+\usepackage[utf8]{inputenc} % Paquete que permite escribir caracteres especiales
+\usepackage[english,spanish, es-tabla]{babel} % Paquete para cambiar "Cuadro" a "Tabla" en encabezados de tablas
+\usepackage{graphicx} % Paquete para importar figuras
+\usepackage{hyperref} % Paquete para agregar vínculos como enlaces
+%\usepackage{natbib}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{multirow}
+\usetikzlibrary{matrix,calc}
+\usepackage{changepage}
+\usepackage{stackengine,mathtools}
+\usepackage[a4paper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry} % Especifica márgenes de la página
+% Preámbulo del reporte. Título, fecha y autor de este archivo
+\title{The impacts of climate change on Mexican islands}
+\author{Alfonso Aguirre Muñoz, Federico Méndez Sánchez, Daniela Munguía Cajigas,\\ Yutzil
+Lora, David Martínez, Beatriz Arellano, Braulio Rojas Mayoral,\\ Evaristo Rojas Mayoral*}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Se analizaron, a través de modelos digitales de elevación, los impactos del cambio
+climático por elevación del nivel del mar sobre la superficie de 28 elementos insulares
+y las especies marinas y terrestres pertenecientes a 26 de estas islas. Entre las islas
+estudiadas se encuentran islas del Golfo de California, Pacífico Norte, Pacífico Tropical
+y Golfo de México y Mar Caribe, siendo el primero el mar que contiene la mayor
+cantidad de islas estudiadas en este trabajo. A partir de la simulación de 3 diferentes
+escenarios de elevación del nivel del mar inducido por el cambio climático, se
+encontró que la mayor de las pérdidas de superficie insular, con respecto a la
+superficie insular inicial, es Arrecife Alacranes, seguida de Isla Del Carmen, frente a
+Campeche, ambas pertenecientes al Golfo de México y Mar Caribe. En cuanto a la
+riqueza de especies, ante los tres escenarios Arrecife Alacranes sufre la mayor
+pérdida de especies, seguida de Banco Chinchorro, también pertenecientes al Golfo
+de México y Mar Caribe. En total se estima que casi el 9\% de la superficie insular y
+el 16.5\% de las especies del conjunto de islas estudiadas se pierde ante un escenario
+de 5 metros de elevación del nivel del mar, el cual representa al escenario más
+pesimista del estudio.
+\end{abstract}
+
+
+\selectlanguage{english} 
+\begin{abstract}
+Using digital elevation models, the impacts of climate change from rising sea levels
+on the surface of 28 insular elements and on the terrestrial and marine species of 26
+of those islands were analyzed. Islands from the Gulf of California, the North Pacific,
+the Tropical Pacific, the Gulf of Mexico and the Caribbean Sea were included in the
+study, with the majority of islands belonging to the Gulf of California. Through the
+simulation of 3 scenarios of sea-level rise induced by climate change, Arrecife
+Alacranes was deemed to suffer the greatest loss of insular surface area with respect
+to its initial size, followed by Isla Del Carmen in front of Campeche, both islands
+pertaining to the Gulf of California and Caribbean Sea. With regard to species
+richness, in all three scenarios, Arrecife Alacranes suffered the greatest losses,
+followed by Banco Chichorro, both islands also found in the Gulf of Mexico and the
+Caribbean Sea. In total, almost 9\% of insular surface area and 16.5\% of island
+species studied were lost under a scenario of a 5 meter rise in sea level,
+representative of the most pessimistic scenario.
+\end{abstract}
+
+
+\section{Introduction}
+
+Sea-level rise is one of the principal consequences of climate change. It is
+acknowledged that its effects are clearly identifiable: total submersion or increased
+flooding of coastal zones, loss or alteration of habitats such as wetlands or mangroves
+(even islands), coastal erosion, and the intrusion of saltwater into surface water and
+groundwater. All of these effects have direct and indirect socioeconomic impacts, the
+majority of which are negative. Flooding, for example, can damage coastal
+infrastructure, and in extreme cases, result in a loss of human life. Sea-level rise has
+an even greater negative effect for the world’s islands, which in some cases may be
+catastrophic, especially for those with reduced area, low elevation and with
+homogenous topography. Such is the case with the islands of the South Pacific, the
+Indian Ocean and the Caribbean. Recent studies in different regions of the world have
+recognized the negative impact sea-level rise may have on islands, including effects
+on habitats and species of flora and fauna, as well as on populations and island
+infrastructure. Mexico contains 4,477 insular elements (islands, cays, reefs and islets)
+that together represent a total surface area of 813,299 ha. Of these elements, 67
+contribute 87\% of the total national insular surface area, as is the case with large
+islands such as Tiburón (119,875 ha), Ángel de la Guarda (93,052 ha), Cozumel
+(46,973 ha), Cedros (34,688 ha) and Guadalupe (24,360 ha). Reefs and cays, —
+which will be the most severely affected by sea-level rise— cover 4.5\% and 1.3\%,
+respectively.\\
+
+
+\begin{table}
+\caption{Classification of Mexican insular elements based their surface area (ha), elaborated from INEGI (2013).}
+\vspace{2mm}
+\begin{tabular}{ccccc}
+\hline 
+\textbf{Classification} & \textbf{Type} & \textbf{Quantity} & \textbf{Surface area (ha)} & \textbf{Constribution (\%)} \\ 
+\hline 
+$<$ 1 & Rock & 1,385 (31.3) & 586 & 0.1 \\ 
+
+1 to 9 & Islet & 1,783 (40.2) & 6,777 & 0.8 \\ 
+ 
+10 to 99 & Small Island & 958 (21.6) & 30,775 & 3.8 \\ 
+
+100 to 1,000 & Medium Island & 237 (5.3) & 69,470 & 8.5 \\ 
+
+$>$ 1,000 & Large Island & 67 (1.5) & 705,691 & 86.8 \\ 
+\hline 
+\multicolumn{2}{r}{\textbf{Total}} & \textbf{4,430 (100)} & \textbf{813,299} & \textbf{100} \\ 
+\hline
+\label{Tab:tab1} 
+\end{tabular} 
+\end{table}
+
+In terms of biodiversity, Mexican islands host at least 8.3\% of all the vascular plants and terrestrial vertebrates found in the country. According to the National Commission for the Knowledge and Use of Biodiversity, CONABIO (acronym in Spanish), the islands with the greatest species richness are: Clarión (646 marine and 346 terrestrial), Cozumel (487 and 437), Cayo Centro (574 and 174), Arrecife Alacranes (695 and 162) and Espíritu Santo (428 y 241). Similarly, each island’s value, in terms of biodiversity, is associated with the level of endemism that it possess. In terms of surface area, the islands of Mexico concentrate 14 times the number of endemic species than the mainland. The islands with the largest number
+of endemic species are: Guadalupe (36 species), Tiburón (19), Espíritu Santo (14),
+Cerralvo (13) and Santa Catalina or Catalana (11). As such, Mexican islands maintain
+unique ecosystems and endemic species while also providing important refuge,
+reproduction and foraging habitats for many migratory species, in particular,
+seabirds, marine turtles and pinnipeds. In the present study, utilizing three sea-level
+rise scenarios (1 m, 3 m and 5 m), the impacts on 28 priority insular elements
+distributed throughout the Mexican seas representing different sizes, elevations,
+topographic complexities, geologic origins, distances from the continent, and
+populations were evaluated (Figure \ref{fig:loglog}; Table \ref{Tab:tab2}). The objective of this study was to answer the following questions: (1) How much insular surface are will be lost due to
+sea-level rise (i.e., amount of submerged insular area) and (2) Given the amount of
+submerged insular area, which ecosystems will be affected and which island species
+will be lost?
+
+
+\section{Methods}
+
+\subsection{Sea-level rise scenarios}
+
+The Fifth Assessment Report (AR5) (\hyperlink{ipcc}{IPCC, 2014a}) of the Intergovernmental Panel on
+Climate Change (IPCC), completed in November 2014 with its Synthesis Report,
+specified an average global sea-level rise increase of 0. 19 $\pm$ 0.02 m from 1901-
+2010. The rate of sea-level rise during the mid-19th century was greater than the
+average rate over the last two millennia (\hyperlink{ipcc}{IPCC, 2014a}). Between, 1993 and 2010,
+the mean rise in average global sea level was 3.2 $\pm$ 0.4 mm/year (\hyperlink{ipcc}{IPCC, 2014a}). The
+two fundamental causes of the aforementioned —that explain 75\% of the observed
+rise — are ocean thermal expansion (water expands as it heats) and a reduction of
+ice sheet coverage due to glacier melt. With regard to the sea-level rise projections
+of the IPCC (Table \ref{Tab:tab2}), the AR5 projections have a higher degree of confidence than
+the projections of the Fourth Assessment Report (AR4), published in 2007, principally
+due to improvements in modeling with regard to the contributions of continental ice.
+As such, the conclusion of the AR5 is that global sea-level rise will continue during
+the 21st century (\hyperlink{ipcc}{IPCC, 2014a}).\\
+
+Given this information, three sea-level rise scenarios were utilized, one realistic
+and conservative of a 1 m rise (\hyperlink{nicholls3}{Nicholls and Cazenave, 2010}; \hyperlink{nicholls}{Nicholls}, 2015), one
+intermediate of a 3 m rise, and one extreme of a 5 m rise, associated with ice cap
+melt (\hyperlink{wetzel}{Wetzel \textit{et al.,} 2012}). If the first scenario of a 1 m rise is above the recent
+projections of the IPCC (Table \ref{Tab:tab1}), although multiple studies have indicated
+that such projections are underestimates and suggest that by 2100, the increase in
+sea level may be between 30 cm and 180 cm (\hyperlink{nicholls}{Nicholls and Cazenave, 2010}). Recent
+studies that have evaluated the impacts of sea-level rise on different islands have
+utilized scenarios between 1 m and 6 m (\hyperlink{bellard}{Bellard \textit{et al.,}} 2014; \hyperlink{wetzel}{Wetzel \textit{et al.,} 2012}; \hyperlink{reynolds}{Reynolds \textit{et al.,}} 2015).\\
+
+
+\begin{table}
+\caption{Sea level rise global mean scenarios for the mid- and late- 21st century, in relation to the 1986-2005 reference period, adapted from IPCC (2014b)}
+\begin{center}
+\begin{tabular}{ccc}
+\hline 
+\multirow{2}{*}{\textbf{Scenario}} & \textbf{2046-2065} & \textbf{2081-2100} \\ 
+ & \textbf{Mean $\pm$ DE (m)} & \textbf{Mean $\pm$ DE (m)} \\ 
+\hline 
+RCP 2.6 & 0.24 $\pm$ 0.075 & 0.40 $\pm$ 0.145 \\ 
+
+RCP 4.5 & 0.26 $\pm$ 0.070 & 0.47 $\pm$ 0.155 \\ 
+
+RCP 6.0 & 0.25 $\pm$ 0.070 & 0.48 $\pm$ 0.150 \\ 
+
+RCP 8.5 & 0.30 $\pm$ 0.080 & 0.63 $\pm$ 0.185 \\ 
+\hline 
+\label{Tab:tab2} 
+\end{tabular} 
+\end{center}
+\end{table}
+
+
+
+\subsection{Impacts on island surfaces}
+
+The elevation data for each insular element was obtained from the digital elevation
+model SRTM (Shuttle Radar Topography Mission) from the National Aeronautics and
+Space Administration (NASA), USA. The elevation data, available from the United
+States Geological Survey website (USGS, \href{http://earthexplorer.usgs.gov}{\texttt{http://earthexplorer.usgs.gov}}), has a
+resolution of 30 m within a latitude/longitude grid with a vertical precision of 1 m.
+The 0 m, 1 m, 3 m, and 5 m contours were extracted and the loss of surface area
+was calculated for each insular element. It is important to state that the results
+obtained are conservative estimates as tidal effects or the occurrence of extreme
+events such as storms or hurricanes were not taken into account.
+
+\subsection{Impacts on island biodiversity}
+
+Information on island biodiversity was obtained from the National Biodiversity
+Information System (SNIB, acronym in Spanish), provided by CONABIO in August of
+2011. The SNIB data was filtered via a spatial analysis utilizing the first version of
+the National Mexican Island Territory Database published by the National Institute of
+Statistics and Geography (INEGI, acronym in Spanish) in 2007. From this
+information, the total number of species for 26 of the 28 island elements
+(independent areas; no information exists for Isla Redonda or Isla San Benedicto) of
+this study were extracted. The species targeted were terrestrial animals and native
+plants (including endemics). With this data, species loss due sea-level rise in each
+one of the 1 m, 3 m, and 5 m scenarios was estimated.\\
+
+In ecology and biogeography, species richness (S) increases with area (A) at
+decreasing rate until remaining constant (\hyperlink{rosenzweig}{Rosenzweig, 1995}). The species-area
+relationship (SAR) reflects the relationship between S and A and is important for the
+prediction of species loss due to global climate change (\hyperlink{drakare}{Drakare \textit{et al.,}} 2006).\\
+
+\hyperlink{drakare}{Triantis \textit{et al.,}} (2012) found that for datasets pertaining to islands, the best fit for a SAR is obtained by the power model:
+
+\begin{equation}
+\label{eq:1}
+S=cA^{z},
+\end{equation}
+where $S$ is the total number of species, $A$ is the area (ha), $c$ is the total number of
+species ($S$) if the island size were 1 ha and $z$ is a constant between 0 and 1 that
+describes the increase in $S$ as $A$ increases:
+
+\begin{equation}
+\label{eq:2}
+\frac{dS}{dA}=z\frac{S}{A},
+\end{equation}
+as such, the increase in species richness per unit area is proportional to species
+density, where z is the proportionality constant. By applying a logarithmic
+transformation to the equation $S=cA^{z}$, (\ref{eq:1}) a linear equation is obtained:
+
+
+
+\begin{equation}
+\label{eq:3}
+log_{10}S=zlog_{10}A+log_{10}c.
+\end{equation}
+
+The constant $z$ represents the slope, while $log_{10}c$ the intercept through the origin. In Figure 1 the log of the total number of species is graphed against the log of the total
+area for each island. The $z$ constant obtained from the equation $log_{10}S=zlog_{10}A+log_{10}c.$ (\ref{eq:3}) utilizing the species-area relationship equation $S=cA^{z}$, (\ref{eq:1}), corresponds to the $z$ of the group of islands.
+
+\begin{figure}
+  \begin{center}
+  \includegraphics[scale=0.5]{../resultados/grafica_loglog_especies_por_area_todas_islas.png}
+  \caption{Log-log graph of the total number of species per area without any increase
+in sea level (red points) with the regression line (blue) used to determine the value
+of z from its slope.}
+  \label{fig:loglog}
+  \end{center}
+\end{figure}
+
+The value of $c$ was obtained from the species-area relationship $S=cA^{z}$, (\ref{eq:1}):
+
+
+\begin{equation}
+\label{eq:4}
+c=\dfrac{S_{0}}{A_{0}^{\;z}},
+\end{equation}
+utilizing the slope $z$ and the initial area $A_{0}$ and total number of species $S_{0}$, from
+equation $c=\dfrac{S_{0}}{A_{0}^{\;z}}$ (\ref{eq:4}), the value of $c$ was calculated for each island. Finally, utilizing
+the remaining surface area for each island, the value of $z$ and the values of $c$, the
+total number of species lost was obtained for 1 m, 3 m and 5 m increases in sea
+level.
+
+
+\section{Results}
+
+The results of the effects of sea-level rise on 28 Mexican insular elements indicated
+a significant impact on island surface area. On a national level, 2.1%, 5.2% and 8.7%
+of insular surface area would be completely submerged with 1 m, 3 m, and 5 m
+increases in sea level, respectively. Given the most extreme scenario of a 5 m
+increase in sea level, Isla del Carmen and the four islands that make up Arrecife
+Alacranes would practically disappear (Figure \ref{fig:surface}). The analysis of the relationship
+between the number of species present and island surface area indicates that for all
+islands and for any scenario, species losses would occur due to a reduction in surface
+area. Extinctions of 1 to 125 species with a 1 m rise in sea level are expected, while
+1 to 387 species extinctions are expected with a 3 m rise, and between 1 and 816
+species extinctions are expected with a 5 m rise in sea level (Table \ref{Tab:tab4}).\\
+
+\begin{figure}
+  \begin{center}
+  \includegraphics[scale=0.5]{../resultados/porcentaje_area_perdida_incremento_nivel_mar_todas_islas.png}
+  \caption{Percentage of island surface area lost due to sea-level increases of 1 m, 3 m, and 5 m.}
+  \label{fig:surface}
+  \end{center}
+\end{figure}
+
+
+\begin{table}
+\caption{Insular area loss (in ha) for each of the islands studied under scenarios of 1 m, 3 m, and 5 m increases in sea level. The number is parenthesis corresponds to the percentage (\%) lost with respect to the initial size of each island.}
+\vspace{2mm}
+\begin{center}
+\begin{tabular}{cccc}
+\hline 
+\multirow{2}{*}{\textbf{Island or group of islands}} & \multicolumn{3}{c}{\textbf{Lost insular surface ha (\%)}}\\ 
+ & \textbf{1m} & \textbf{3m} & \textbf{5m} \\ 
+\hline 
+Arrecife Alacranes & 43.5 (39.7) & 94.2 (85.9) & 109.7 (100.0) \\ 
+
+Del Carmen & 2615.3 (20.4) & 6504.2 (50.8) & 10735.8 (83.9) \\ 
+
+Mujeres & 35.2 (6.6) & 147.2 (27.5) & 322.7 (60.4) \\ 
+ 
+San Benito Medio & 7.7 (8.8) & 29.8 (33.7) & 47.9 (54.3) \\ 
+
+Rasa & 12.5 (18.5) & 27.2 (40.2) & 35.9 (53.1) \\ 
+
+Banco Chinchorro & 32.4 (5.3) & 92.5 (15.1) & 292.0 (47.7) \\ 
+
+Larga & 16.1 (21.1) & 27.2 (35.5) & 36.1 (47.2) \\ 
+
+Isabel & 13.7 (13.0) & 25.3 (24.0) & 39.7 (37.6) \\ 
+
+San Benito Oeste & 10.2 (2.1) & 52.9 (11.1) & 99.0 (20.7) \\ 
+
+San Benito Este & 8.4 (4.2) & 24.7 (12.5) & 39.5 (20.0) \\ 
+
+Redonda & 1.6 (4.5) & 4.5 (12.5) & 7.1 (19.6) \\ 
+ 
+Cozumel & 1279.0 (2.7) & 3726.9 (7.8) & 7399.0 (15.4) \\ 
+
+San Juanico & 18.6 (2.0) & 48.0 (5.1) & 113.7 (12.1) \\ 
+
+Clarión & 71.4 (3.4) & 136.2 (6.4) & 212.7 (10.0) \\ 
+
+Danzante & 9.8 (2.4) & 25.1 (6.2) & 37.2 (9.1) \\ 
+
+San Benedicto & 19.0 (2.8) & 39.7 (5.9) & 56.7 (8.4) \\ 
+ 
+Complejo insular Espíritu Santo & 155.4 (1.5) & 524.7 (5.0) & 852.2 (8.0) \\ 
+
+Carmen & 519.3 (3.5) & 811.4 (5.4 ) & 997.4 (6.7) \\ 
+
+Coronado & 9.3 (1.2) & 26.7 (3.4) & 50.8 (6.5) \\ 
+
+María Cleofas & 27.4 (1.3) & 68.7 (3.3) & 121.0 (5.9) \\ 
+
+María Magdalena & 67.8 (1.0) & 177.4 (2.5) & 280.0 (4.0) \\ 
+
+Monserrat & 14.0 (0.7) & 39.3 (2.1) & 63.5 (3.4) \\ 
+ 
+Socorro & 130.7 (1.0) & 278.7 (2.0) & 424.0 (3.1) \\ 
+ 
+Cedros & 388.4 (1.1) & 789.5 (2.2) & 1054.6 (2.9) \\ 
+
+Guadalupe & 191.4 (0.8) & 489.8 (1.9) & 693.8 (2.8) \\ 
+
+Tiburón & 964.5 (0.8) & 2113.2 (1.8) & 3171.0 (2.6) \\ 
+
+Santa Catalina & 26.2 (0.6) & 53.5 (1.3) & 99.8 (2.4) \\ 
+
+María Madre & 63.8 (0.4) & 157.9 (1.1) & 281.5 (1.9) \\ 
+\hline 
+\textbf{Total} & \textbf{6752.6 (2.1)} & \textbf{16536.4 (5.2)} & \textbf{27674.1 (8.7)} \\ 
+\hline 
+\label{Tab:tab3} 
+\end{tabular}
+\end{center} 
+\end{table}
+
+The forecast for the scenario that considers a 1 m rise in sea level indicates that the
+islands with the greatest losses in total surface area are: Arrecife Alacranes (43.51 ha, 39.7\% of the original surface area); Del Carmen (2,615 ha, 20.4\%); Larga (16.1 ha, 21\%); Rasa (12.5 ha, 18.5\%) and Isabel (13.7 ha, 13\%). The greatest impacts
+on insular biodiversity under this scenario (Figure 4, Table 4) occur on the islands of:
+Arrecife Alacranes (125 fewer species, 15.3\% of the total number of species present);
+Banco Chinchorro (14 species, 1.8\%); Clarión (11 species, 1.1\%); Larga (8 species,
+7.5\%); Rasa (7 species, 6.5\%) and Cozumel (7 species, 1\%).\\
+
+Under the scenario of a 3 m rise in sea level, the islands with the greatest loss of
+surface area are: Arrecife Alacranes (94.2 ha, 86\% of the original surface area); Del
+Carmen (6,504.2 ha, 50.8\%); Mujeres (147.2 ha, 27.5\%); Rasa (27.2 ha, 40.2\%);
+and Larga (27.2 ha, 35.5\%). The greatest impacts on insular biodiversity under this
+scenario (Figure 4) occurred on the islands of: Arrecife Alacranes (387 fewer species,
+47.4\% of the total number of species present); Banco Chinchorro (40 especies,
+5.2\%); Clarión (21 especies, 2.2\%); Cozumel (20 especies, 2.6\%); Rasa (16
+especies, 15.1\%); Complejo Insular Espíritu Santo (14 especies, 1.7\%) and Larga
+(14 especies, 13.4\%).\\
+
+Under the scenario of a 5 m rise in sea level, the islands with the greatest loss of
+surface area are: Arrecife Alacranes (109.7 ha, 100\% of the original surface area);
+Del Carmen (10,735.8 ha, 83.9\%); Mujeres (322.7 ha, 60.4\%); Rasa (35.9 ha,
+53.1\%); Larga (36.1 ha, 47.2\%); Banco Chinchorro (292 ha, 47.7\%); and Isabel
+(39.7 ha, 37.6\%). The greatest impacts on insular biodiversity under this scenario
+(Table 4) occurred on the islands of: Arrecife Alacranes (816 fewer species, 100 \% of
+the total number of species present); Banco Chinchorro (147 species, 19.2 \%);
+Cozumel (41 species, 5.3\%); Clarión (34 species, 3.4\%); Rasa (23 species, 21.7\%); Complejo Insular Espíritu Santo (23 species, 2.7\%) and Larga (19 species, 18.6\%).\\
+
+
+\begin{figure}
+  \begin{center}
+  \includegraphics[scale=0.5]{../resultados/numero_especies_porcentaje_area_perdida_incremento_nivel_mar_islas_golfo_mar_caribe.png}
+  \caption{Number of species according to the percentage of surface area lost given a rise in sea level of 1 m (light gray points), 3 m (dark gray points), and 5 m (black points) for each island in the regions of the Gulf of Mexico and the Caribbean Sea.}
+  \label{fig:number_species}
+  \end{center}
+\end{figure}
+
+\begin{table}
+\caption{Species populations lost for each of the islands studied under scenarios of 1 m, 3 m and 5 m increases in sea level. Current total area ($A_{0}$), current total number of species ($S_{0}$), $c$ value. The 1, 3 and 5 subscripts indicate values for scenarios of 1 m, 3 m and 5 m increases in sea level, respectively}
+\vspace{2mm}
+\begin{adjustwidth}{-2.6cm}{}
+\setlength{\tabcolsep}{4pt}
+\begin{footnotesize}
+\begin{tabular}{ccccccccccccccccc}
+\hline 
+\multirow{3}{*}{\textbf{Island}} & \multirow{3}{*}{\textbf{$\mathbf{A_{0}}$ (ha)}} & \multirow{3}{*}{\textbf{$\mathbf{S_{0}}$}} & \multirow{3}{*}{\textbf{c}} & \multirow{3}{*}{\textbf{$\mathbf{A_{1}}$ (ha)}} & \multirow{3}{*}{\textbf{$\mathbf{S_{1}}$}} & \multicolumn{2}{c}{\textbf{Species lost}} & \multirow{3}{*}{\textbf{$\mathbf{A_{3}}$ (ha)}} & \multirow{3}{*}{\textbf{$\mathbf{S_{3}}$}} & \multicolumn{2}{c}{\textbf{Species lost}} & \multirow{3}{*}{\textbf{$\mathbf{A_{5}}$ (ha)}} & \multirow{3}{*}{\textbf{$\mathbf{S_{5}}$}} &\multicolumn{2}{c}{\textbf{Species lost}} \\
+ & & & & & &\multicolumn{2}{c}{\textbf{(1m)}}& & &\multicolumn{2}{c}{\textbf{(3m)}}& & &\multicolumn{2}{c}{\textbf{(5m)}} \\
+ & & & & & &\textbf{No.} &\textbf{\%} & & &\textbf{No.} &\textbf{\%} & & &\textbf{No.} &\textbf{\%} \\
+\hline 
+Arrecife Alacranes &    109.66 &  816 &  47.64 &     66.15 &  691 &  125 &  15.32 &     15.48 &  429 &  387 &  47.43 &      0.00 &    0 &  816.1 &  100.00 \\
+Del Carmen &  12796.08 &   21 &  32.05 &  10180.74 &   19 &    2 &   9.52 &   6291.92 &   17 &    4 &  19.05 &   2060.33 &   12 &      9 &   42.86 \\
+Carmen &  14927.41 &  333 &  25.28 &  14408.06 &  329 &    4 &   1.20 &  14116.04 &  327 &    6 &   1.80 &  13929.99 &  326 &      7 &    2.10 \\
+Cedros &  35927.82 &  154 &   8.27 &  35539.40 &  153 &    1 &   0.65 &  35138.33 &  153 &    1 &   0.65 &  34873.20 &  153 &      1 &    0.65 \\
+Banco Chinchorro &    611.84 &  765 &  40.92 &    579.46 &  751 &   14 &   1.83 &    519.33 &  725 &   40 &   5.23 &    319.79 &  618 &    147 &   19.22 \\
+Clarión &   2128.63 &  993 &  36.31 &   2057.23 &  982 &   11 &   1.11 &   1992.42 &  972 &   21 &   2.11 &   1915.93 &  959 &     34 &    3.42 \\
+Coronado &    782.34 &   71 &   9.90 &    773.06 &   71 &    0 &   0.00 &    755.62 &   70 &    1 &   1.41 &    731.55 &   69 &      2 &    2.82 \\
+Cozumel &  47991.83 &  773 &  19.74 &  46712.83 &  766 &    7 &   0.91 &  44264.88 &  753 &   20 &   2.59 &  40592.84 &  732 &     41 &    5.30 \\
+Danzante &    407.20 &  213 &  42.55 &    397.44 &  211 &    2 &   0.94 &    382.13 &  209 &    4 &   1.88 &    370.00 &  206 &      7 &    3.29 \\
+Complejo Insular Espíritu Santo &  10588.00 &  849 &   0.72 &  10432.60 &  845 &    4 &   0.47 &  10063.29 &  835 &   14 &   1.65 &   9735.76 &  826 &     23 &    2.71 \\
+Guadalupe &  25131.72 &  401 &  21.99 &  24940.32 &  400 &    1 &   0.25 &  24641.87 &  398 &    3 &   0.75 &  24437.93 &  397 &      4 &    1.00 \\
+Isabel &    105.43 &    9 &   1.15 &     91.70 &    9 &    0 &   0.00 &     80.10 &    8 &    1 &  11.11 &     65.76 &    8 &      1 &   11.11 \\
+Larga &     76.46 &  102 &  22.80 &     60.32 &   94 &    8 &   7.84 &     49.28 &   88 &   14 &  13.73 &     40.40 &   83 &     19 &   18.63 \\
+María Cleofas &   2053.85 &   19 &   2.46 &   2026.48 &   19 &    0 &   0.00 &   1985.17 &   19 &    0 &   0.00 &   1932.88 &   19 &      0 &    0.00 \\
+María Madre &  14456.80 &  163 &  11.79 &  14393.01 &  163 &    0 &   0.00 &  14298.87 &  162 &    1 &   0.61 &  14175.33 &  162 &      1 &    0.61 \\
+Maria Magdalena &   7035.48 &   10 &   0.93 &   6967.73 &   10 &    0 &   0.00 &   6858.12 &   10 &    0 &   0.00 &   6755.48 &   10 &      0 &    0.00 \\
+Monserrat &   1872.97 &  218 &  28.88 &   1859.00 &  217 &    1 &   0.46 &   1833.64 &  216 &    2 &   0.92 &   1809.45 &  216 &      2 &    0.92 \\
+Mujeres &    534.37 &   15 &   2.78 &    499.18 &   15 &    0 &   0.00 &    387.20 &   13 &    2 &  13.33 &    211.63 &   11 &      4 &   26.67 \\
+Rasa &     67.61 &  106 &  27.77 &     55.12 &   99 &    7 &   6.60 &     40.40 &   90 &   16 &  15.09 &     31.73 &   83 &     23 &   21.70 \\
+San Juanico &    942.11 &    3 &   4.04 &    923.48 &    3 &    0 &   0.00 &    894.09 &    3 &    0 &   0.00 &    828.41 &    3 &      0 &    0.00 \\
+Santa Catalina &   4076.08 &  207 &   0.48 &   4049.87 &  207 &    0 &   0.00 &   4022.58 &  206 &    1 &   0.48 &   3976.31 &  205 &      2 &    0.97 \\
+San Benito Este &    197.74 &    4 &  21.39 &    189.35 &    4 &    0 &   0.00 &    173.02 &    4 &    0 &   0.00 &    158.24 &    4 &      0 &    0.00 \\
+San Benito Medio &     88.22 &    5 &   5.43 &     80.49 &    5 &    0 &   0.00 &     58.47 &    4 &    1 &  20.00 &     40.35 &    4 &      1 &   20.00 \\
+San Benito Oeste &    478.59 &   32 &  23.28 &    468.39 &   32 &    0 &   0.00 &    425.68 &   31 &    1 &   3.13 &    379.55 &   30 &      2 &    6.25 \\
+\hline 
+\label{Tab:tab4} 
+\end{tabular} 
+\end{footnotesize}
+\end{adjustwidth}
+\end{table}
+
+
+\begin{figure}
+  \begin{center}
+  \includegraphics[scale=0.5]{../resultados/especies_perdidas_incremento_nivel_mar_todas_islas.png}
+  \caption{Species losses due to sea-level increases of 1 m, 3 m, and 5 m.}
+  \label{fig:species_losses}
+  \end{center}
+\end{figure}
+
+\subsection{Loss of island ecosystem surface area}
+
+Diverse ecosystems and insular habitats are affected as a consequence of island
+flooding due to sea-level rise. Under the scenario of a 1 m rise in sea level, ecosystem
+impacts on the islands at greatest risk of flooding are as follows: Arrecife Alacranes,
+39.65\% loss of coastal dune vegetation; Del Carmen, 54.98\% loss of mangroves;
+Larga, 21.11\% loss of pastures and Isabel, 13.02\% loss of tropical deciduous forest
+(Table \ref{Tab:tab5}). With a 3 m rise in sea level, the most affected islands and ecosystems are:
+Arrecife Alacranes, 62.97\% loss of coastal dune vegetation; Del Carmen, 73.53\%
+loss of mangroves; Mujeres, 10.43\% loss of low semi-deciduous jungle; Larga,
+31.55\% loss of pastures and Isabel, 24.1\% loss of tropical deciduous forest (Table \ref{Tab:tab5}). In the last scenario, where the sea level rises 5 m, the most affected islands and
+ecosystems are: Del Carmen, 98.35 \% loss of mangroves; Arrecife Alacranes, 100\%
+loss of coastal dune vegetation; Mujeres, 21.04\% loss of low semi-deciduous jungle;
+Larga, 47.16\% loss of pastures; Banco Chinchorro, 100\% loss of coastal dune
+vegetation, 66.83\% loss of low coastal jungle, and 48.2\% loss of halophile vegetation
+and Isabel, 44.61\% loss of tropical deciduous forest (Table \ref{Tab:tab5}). For the 28 insular
+elements studied, the 1 m rise in sea level resulted in the loss of 2,965.47 ha of
+mangroves (32\% of the total ecosystem); while the 3 m rise in sea level resulted in
+the loss of 5,035.19 ha of mangroves. Lastly, the 5 m rise in sea level resulted in the
+loss of 8,391.99 ha of mangroves. This is particularly evident in Isla Cozumel, where
+while the loss of insular surface area was not important under any of the sea-level
+rise scenarios evaluated (3.51\%, 8.63\% y 17.51\% for 1 m, 3 m y 5 m, respectively),
+but the impact on mangrove ecosystem area was very important as 10.22\%, 28.84\%
+and 81.4\% of the original surface area was lost under the 1 m, 3 m, 5 m scenarios,
+respectively.
+
+\begin{table}
+\caption{Loss of different island ecosystems, by vegetation type, due to a rise in
+sea-level of 1 m, 3 m, or 5 m.}
+\vspace{2mm}
+\begin{adjustwidth}{-0.5cm}{}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{ccccc}
+\hline
+\multirow{2}{*}{\textbf{Island}}  & \multirow{2}{*}{\textbf{Vegetation type}} & \multicolumn{3}{c}{\textbf{Loss (\%)}}  \\
+ & & \textbf{1m} & \textbf{3m} & \textbf{5m} \\
+ 
+\hline
+Arrecife Alacranes & Vegetation with coastal dunes & 39.65 & 62.97 & 100.00 \\
+Banco Chinchorro &    Vegetation with coastal dunes & 100.00 & 100.00 & 100.00 \\
+Banco Chinchorro &     Coastal tropical dry forest & 5.31 & 18.84 & 66.83 \\
+Banco Chinchorro &      Halophile vegetation & 7.46 & 18.96 & 48.20 \\
+Carmen-Bahía de Loreto &       Halophile vegetation & 31.33 & 37.36 & 44.55 \\
+Carmen-Bahía de Loreto &  Sarcocaulescent scrub with giant cactus & 10.50 & 18.23 & 31.68 \\
+Carmen-Bahía de Loreto & Sarcocaulescent scrub with subinerm scrub & 0.60 & 1.22 &  2.44 \\
+Carmen-Bahía de Loreto & Sarcocaulescent scrub with subinerm scrub & 0.68 & 1.21 &  2.17 \\
+Cedros &     Without apparent vegetation & 1.13 & 2.95 &  7.68 \\
+Cedros &      Sarco-crasicaule scrub & 1.02 & 1.88 &  3.48 \\
+Cedros &     Rosetophilous coastal scrub & 1.49 & 2.19 &  3.23 \\
+Cedros &         Chaparral & 0.57 & 0.86 &  1.31 \\
+Clarión -Revillagigedo &       Tropical grassland & 3.17 & 9.88 & 30.78 \\
+Clarión -Revillagigedo &        Tropical scrub & 2.91 & 5.00 &  8.60 \\
+Coronados-Bahía de Loreto &    Xeric scrub/Halophile vegetation & 1.11 & 2.69 &  6.49 \\
+Cozumel &    Vegetation with coastal dunes & 68.81 & 82.95 & 100.00 \\
+Cozumel &         Mangrove & 10.22 & 28.84 & 81.40 \\
+Cozumel &    Vegetation with coastal dunes & 3.33 & 13.45 & 54.32 \\
+Cozumel &      Semi-evergreen forest & 0.12 & 0.69 &  3.89 \\
+Danzante-Bahía de Loreto &    Xeric scrub/Halophile vegetation & 2.22 & 4.36 &  8.55 \\
+Espiritu Santo &       Halophile vegetation & 6.22 & 20.68 & 68.70 \\
+Espiritu Santo &    Vegetation with coastal dunes & 16.28 & 21.84 & 29.31 \\
+Espiritu Santo &  Sarcocaulescent scrub with giant cactus & 3.03 & 9.12 & 27.47 \\
+Espiritu Santo & Sarcocaulescent scrub with subinerm scrub & 1.30 & 3.96 & 12.07 \\
+Guadalupe &     Natural palm-tree forest & 2.96 & 5.10 &  8.80 \\ 
+Guadalupe &      Coastal succulent scrub & 1.97 & 3.41 &  5.91 \\
+Guadalupe &         Xeric scrub & 0.80 & 1.59 &  3.17 \\
+Isabel &         Bare ground & 100.00 & 100.00 & 100.00 \\
+Isabel &     Tropical deciduous forest & 13.02 & 24.10 & 44.61 \\
+Isla del Carmen &         Mangrove & 54.98 & 73.53 & 98.35 \\
+Larga-Islas Marietas &         Grassland & 21.11 & 31.55 & 47.16 \\
+María Cleofas & Tropical and subtropical deciduous forest & 1.25 & 2.67 &  5.68 \\
+María Madre-Islas Marías & Tropical and subtropical deciduous forest & 0.44 & 0.93 &  1.95 \\
+María Magdalena-Islas Marías & Tropical and subtropical deciduous forest & 0.99 & 2.00 &  4.033 \\
+Monserrat-Bahía de Loreto &   Xeric scrub/Halophile vegetation & 0.75 & 1.58 &  3.32 \\
+Mujeres &      Semi-deciduous forest & 5.17 & 10.43 & 21.04 \\
+Redonda-Islas Marietas & Grassland & 4.47 & 9.37 & 19.64 \\
+San Benedicto-Revillagigedo &      Bare ground & 2.59 & 4.54 &  7.94 \\
+San Benito &     Matorral rosetófilo costero & 3.47 & 9.30 & 24.92 \\
+San Juanico-Islas &      Marías Deciduous forest & 1.91 & 47.83 & 80.35 \\
+Santa Catalina-Bahía de Loreto &    Xeric scrub/Halophile vegetation & 0.64 & 1.29 &  2.63 \\
+Socorro-Revillagigedo &         Bare ground & 8.66 & 16.83 & 32.72 \\
+Socorro-Revillagigedo &        Conifer forest & 5.10 & 7.85 & 12.07 \\
+Socorro-Revillagigedo &        Tropical scrub & 0.56 & 1.10 &  2.13 \\
+Socorro-Revillagigedo &       Tropical grassland & 0.60 & 1.09 &  2.00 \\
+Socorro-Revillagigedo &  Tropical deciduous latifolius forest & 0.44 & 0.81 &  1.52 \\
+Socorro-Revillagigedo &  Tropical evergreen latifolius forest & 0.27 & 0.46 &  0.76 \\
+Socorro-Revillagigedo &     Deciduous latifolius forest & 0.00 & 0.00 &  0.00 \\
+Tiburón &         Xeric scrub & 0.83 & 1.46 &  2.58 \\
+\hline
+\label{Tab:tab5} 
+\end{tabular}
+\end{adjustwidth}
+\end{table}
+
+
+\section{Discussion}
+
+The current study represents an effort to evaluate the impact of sea-level rise on the
+biodiversity and ecosystems of Mexican islands. The information presented for the 28
+priority insular elements indicates that a significant flooding risk is present for many
+islands, particularly those with homogenous topography and low elevation,
+accompanied by significant impacts on biodiversity.\\
+
+With regard to the surface area affected, Arrecife Alacranes, Del Carmen, Mujeres,
+Rasa and Larga are of particular concern given that a sea-level rise of 5 m results in
+the loss of the majority of their respective surface areas. These results agree with
+those reported by other authors, including the IPCC, who point out the high level of
+vulnerability of barrier islands (\textit{e.g.,} Isla del Carmen), cays (\textit{e.g.,} Banco Chinchorro)
+and reefs (\textit{e.g.}, Arrecife Alacranes) given a rise in sea level (\hyperlink{nurse}{Nurse \textit{et al.,}} 2014; \hyperlink{nicholls}{Nicholls \textit{et al.,}} 2007). It is possible that the results obtained regarding the loss of
+island surface area that are presented here may be considered conservative given
+that the data used in the sea-level rise models had a vertical resolution of 1 m. It
+also important to note that the natural erosive processes associated with islands were
+not taken into account, nor was the accumulative effect of sea-level rise together
+with extreme climate events such as tropical storms or hurricanes. The islands,
+particularly reefs, can withstand small increases in sea-level due to modifications in
+their erosion processes and due to their geomorphological characteristics; however,
+surpassing a certain sea-level threshold may results in irreversible flooding (\hyperlink{webb}{Webb
+and Kench, 2010}). A clear example of this occurred in October of 1995, when
+hurricane Roxanne resulted in serious damage to Isla Del Carmen, with important
+coastline receding and damage to mangroves; the affected area was estimated to be
+24 km$^{2}$
+(\hyperlink{palacio}{Palacio-Prieto \textit{et al.,}} 1999). There are certain islands, as is the case with
+Banco Chinchorro, that are already below the sea-level rise scenarios (\textit{e.g.,} the
+interior lagoons of Cayo Centro), and as such should not be included in the estimation
+of flooded insular surface area. However, studies that have utilized similar methods
+to evaluate the potential impacts of sea-level rise on insular regions have showed
+that the results obtained for other insular regions, provide a fair approximation of
+what may occur in reality (\hyperlink{bellard}{Bellard \textit{et al.,}} 2014; \hyperlink{bellard}{Wetzel \textit{et al.,}} 2013). In general,
+in terms of insular surface area loss or flooding, the results obtained in this study are
+of the same magnitude as those reported for other islands in different regions of the
+world (\hyperlink{bellard}{Bellard \textit{et al.,}} 2014; \hyperlink{bellard}{Wetzel \textit{et al.,}} 2013). For example, \hyperlink{bellard}{Bellard \textit{et al.,}} 2014;
+report that 1\% and 4.1\% of the insular surface area would flood given sea-level
+increases of 1 m and 6 m for the 10 insular “hotspots” of the world. The present
+study reports a 2.1\%, 5.2\% and 8.7\% loss in insular surface area of Mexican islands
+due to flooding for 1 m, 3 m, and 5 m rises in sea level.\\
+
+The loss of between 1 and 816 species on some islands represents a serious threat
+to insular ecosystem dynamics. It is possible that a few of these species, particularly
+migratory birds, may be able to move to other nearby islands with favorable habitats
+when faced the total submersion of an island or the loss of a substantial portion of
+original habitat. However, given that Mexican islands concentrate 14 times more
+endemic species than the continent, the effects of sea-level rise may be catastrophic
+and may result in the extinction of endemic species. Ecosystem impacts may be
+magnified on islands like Isla Cozumel: under a scenario of a 5 m rise in sea level, a
+
+15.4\% loss of island surface area is expected. However, this loss results in the
+disappearance of close to 90\% of the coastal wetlands and mangroves.\\
+
+For a better understanding of this risk, the impacts of the rise in sea level would need
+to be integrated with the actual and potential habitat of insular endemic Mexican
+species. As with this last case, and the results of the present study, the estimations
+presented are conservative, as insular biodiversity information is limited. To date,
+information for 149 of the 4,447 Mexican islands is available, and for those islands
+where information is available, such as or Tiburón or Ángel de Guarda, important
+information gaps exist due to their size and complex topography (CONABIO, 2007).
+Some of the most biodiverse islands are also the largest in size and elevation, like
+Guadalupe, Tiburón, Espíritu Santo, Socorro and Clarión. These Mexican islands offer
+an opportunity for migratory species in the face of climate change, particularly for
+seabirds, which will be negatively affected by sea-level increases on other islands of
+the world. Guadalupe Island represents an opportunity, given that it is already
+serving as a refuge and alternative habitat for the Laysan Albatross (Phoebastria
+immutabilis). The principal colonies of this albatross are located on Midway Islands,
+Hawaii, USA, where they are threatened by climate change and by invasive species,
+particularly rodents. \hyperlink{reynolds}{Reynolds \textit{et al.,} }(2015) evaluated the impacts of sea-level rise
+on seabird colonies on Midways Islands and found that the Laysan albatross and the
+Black-footed albatross (\textit{P. nigripes}) will be seriously affected. This constitutes a
+severe impact considering that the Hawaiian Islands concentrate more than 95% of
+the global population of these two species of albatross. It is for this reason that
+islands such as Guadalupe, contribute to strengthening global population resistance
+of seabirds like the Laysan albatross. Guadalupe island has hosted the natural
+immigration of the Hawaiian albatross, and is also home to important conservation
+and restoration efforts (\hyperlink{aguirre}{Aguirre-Muñoz \textit{et al.,}} 2016, 2011), such as feral cat control
+(\hyperlink{hernandez}{Hernández-Montoya \textit{et al.,}} 2014) and the recent installation of a feral cat exclusion
+fence to protect the Laysan albatross colony. It is important to continue restoration
+efforts on Mexican islands as a means to mitigate the effects of climate change,
+including sea-level rise. Recently, \hyperlink{jones}{Jones \textit{et al.,}} (2016) reported that eradications of
+invasive mammals on islands has positively impacted insular biodiversity on a global
+scale. Mexico is an important contributor to this effort and has carried out the largest
+number of eradications, and therefore of the largest number insular of species
+benefited.\\
+
+\section{Conclusions}
+
+The rise in sea level has direct negative impacts on the islands of Mexico, its
+ecosystems and biodiversity. Even under conservative scenarios, as with the 1 m rise
+in sea level, the effects are considerable. In general, the Mexican islands that are
+most affected are located in the Gulf of Mexico and Caribbean Sea: Del Carmen,
+Mujeres, Arrecife Alacranes and Banco Chinchorro. The large and elevated islands
+(\textit{e.g.,} Guadalupe, Socorro and Cedros) may buffer the effects of sea-level rise given
+their geomorphological characteristics, with high cliffs and plateaus. In fact, this type
+of Mexican island represents an opportunity to contribute to the mitigation — at least
+in terms of biodiversity —of the effects of sea-level rise in other insular regions.
+
+
+
+\section{Acknowledgements}
+
+We specially thank Andrea Lievana MacTavish for her work with the translation of the
+document and comments that greatly improved the manuscript. We also thank, Luis
+Navarro Verduzco for assistance with the tables and Ana Cárdenas Tapia for the
+contribution with the results of vegetation loss. Finally, we thank all our colleagues
+from Grupo de Ecología y Conservación de Islas. 
+
+\begin{thebibliography}{10}
+
+\bibitem{aguirre}\hypertarget{aguirre}{}	 
+Aguirre-Muñoz, A., A. Samaniego-Herrera, A. L. Luna-Mendoza, M. Ortiz-Alcaraz, Rodríguez-Malagón, F. Méndez-Sánchez, M. Félix-Lizárraga, J. Hernández-Montoya, R. González-Gómez, F. Torres-García, J. Barredo-Barberena, and M. Latofski-Robles, 
+\textit{Island restoration in Mexico: ecological outcomes after systematic eradications of invasive mammals.} 
+Island invasives: eradication and management, Auckland, New Zealand, February 2011.
+
+\bibitem{aguirre2}\hypertarget{aguirre2}{}	 
+Aguirre-Muñoz, A., A. Samaniego-Herrera, L. Luna-Mendoza, A. Ortiz-Alcaraz, F. Méndez-Sánchez, and J. Hernández-Montoya, 
+\textit{La restauración ambiental extiosa de las islas de México: una reflexión sobre los avances a la fecha y los retos por venir.} 
+In: Experiencias mexicanas en la restauración de los ecosistemas (Ceccon, E. and C. Martinez-Garza, Eds.). CRIM, UNAM, UAEM y CONABIO, México, D.F., 487-512, 2016.
+
+\bibitem{bellard}\hypertarget{bellard}{}	 
+Bellard, C., C. Leclerc, and F. Courchamp,
+\textit{Impact of sea level rise on the 10 insular biodiversity hotspots.} 
+Global Ecology and Biogeography 23(2), 203-212, 2014.
+
+\bibitem{conabio}\hypertarget{conabio}{}	 
+CONABIO, 2007.
+\textit{Análisis de vacíos y omisiones en conservación de la biodiversidad marina de México: océanos, costas e islas.} 
+Comisión Nacional para el
+Conocimiento y Uso de la Biodiversidad, Comisión Nacional de Áreas Naturales Protegidas, The Nature Conservancy-Program México, Pronatura, A.C., Mexico city, 129 pp.
+ 
+\bibitem{drakare}\hypertarget{drakare}{}	 
+Drakare, S., J. J. Lenon, and H. Hillebrand,
+\textit{The imprint of the geographical, evolutionary and ecological context on species-area relationship.} 
+Ecology Letters 9, 215-227.
+
+\bibitem{hernandez}\hypertarget{hernandez}{}	 
+Hernández-Montoya, J. C., L. Luna-Mendoza, A. Aguirre-Muñoz, F. Méndez-Sánchez, M. Félix-Lizárraga, and J. M. Barredo-Barberena,
+\textit{Laysan Albatross on Guadalupe Island, México: Current Status and Conservation Actions.} 
+Monographs of the Western North American Naturalist 7, 543-554, 2014.
+
+\bibitem{inegi}\hypertarget{inegi}{}	 
+INEGI, 2013
+\textit{Conjunto de Datos del Territorio Insular Mexicano.} 
+Instituto Nacional Estadística y Geografía, Aguascalientes, Mexico.
+
+\bibitem{ipcc}\hypertarget{ipcc}{}	 
+IPCC, 2014a.
+\textit{Climate change 2014: Synthesis report. Contribution of working groups I, II and III to the Fifth Assessment Report of the Intergovernmental Panel on Climate Change.} 
+IPCC, Geneva, Switzerland, 151 pp.
+
+\bibitem{ipcc2}\hypertarget{ipcc2}{}	 
+IPCC, 2014b.
+\textit{Summary for policymakers. In: Climate Change 2014: Mitigation of
+Climate Change. Contribution of Working Group III to the Fifth Assessment
+Report of the Intergovernmental Panel on Climate Change} 
+(Edenhofer, O., R.
+Pichs-Madruga, Y. Sokona, E. Farahani, S. Kadner, K. Seyboth, A. Adler, I.
+Baum, S. Brunner, E. P., B. Kriemann, J. Savolainen, S. S., C. von Stechow,
+T. Zwickel, and J. Minx, Eds.). Cambridge University Press, Cambridge, United
+Kingdom and New York, NY, USA, 4-30.
+
+
+\bibitem{jones}\hypertarget{jones}{}	 
+Jones, H. P., N. D. Holmes, S. H. M. Butchart, B. R. Tershy, P. J. Kappes, I. Corkery,
+A. Aguirre-Muñoz, D. P. Armstrong, E. Bonnaud, A. A. Burbidge, K. Campbell,
+F. Courchamp, P. E. Cowan, R. J. Cuthbert, S. Ebbert, P. Genovesi, G. R.
+Howald, B. S. Keitt, S. W. Kress, C. M. Miskelly, S. Oppel, S. Poncet, M. J.
+Rauzon, G. Rocamora, J. C. Russell, A. Samaniego-Herrera, P. J. Seddon, D.
+R. Spatz, D. R. Towns, and D. A. Croll,
+\textit{Invasive mammal eradication on islands results in substantial conservation gains.} Proceedings of the National Academy of Sciences 113(15), 4033-4038.
+
+\bibitem{nicholls}\hypertarget{nicholls}{}	 
+Nicholls, R. J.,
+\textit{Adapting to Sea Level Rise. In: Coastal and Marine Hazards, Risks, and Disasters (Shroder, J. F., J. T. Ellis, and D. J. Sherman, Eds.).} 
+Elsevier, Boston, USA, 243 - 270, 2015.
+
+\bibitem{nicholls2}\hypertarget{nicholls2}{}	 
+Nicholls, R. J. and A. Cazenave,
+\textit{Sea-Level Rise and Its Impact on Coastal Zones.} 
+Science 328(5985), 1517-1520, 2010.
+
+\bibitem{nicholls3}\hypertarget{nicholls3}{}	 
+Nicholls, R. J., P. P. Wong, V. Burkett, J. Codignotto, J. Hay, R. McLean, S.
+Ragoonaden, and C. D. Woodroffe,
+\textit{Coastal systems and low-lying areas.
+In: Climate Change 2007: Impacts, Adaptation and Vulnerability. Contribution
+of Working Group II to the Fourth Assessment Report of the Intergovernmental
+Panel on Climate Change (Parry, M., O. Canziani, J. Palutikof, P. van der
+Linden, and C. Hanson, Eds.).} 
+Cambridge University Press, Cambridge, UK, 315-356, 2007.
+
+\bibitem{nurse}\hypertarget{nurse}{}	 
+Nurse, L., R. McLean, J. Agard, L. Briguglio, V. Duvat-Magnan, N. Pelesikoti, E.
+Tompkins, and A. Webb,
+\textit{Small islands. In: Climate Change 2014:
+Impacts, Adaptation, and Vulnerability. Part B: Regional Aspects. Contribution
+of Working Group II to the Fifth Assessment Report of the Intergovernmental
+Panel on Climate Change.} 
+(Barros, V., C. Field, D. Dokken, M. Mastrandrea, K.
+Mach, T. Bilir, M. Chatterjee, K. Ebi, Y. Estrada, R. Genova, B. Girma, E. Kissel,
+A. Levy, S. MacCracken, P. Mastrandrea, and L. White, Eds.). Cambridge
+University Press, Cambridge, United Kingdom and New York, NY, USA, 1613-
+1654, 2014.
+
+\bibitem{palacio}\hypertarget{palacio}{}	 
+Palacio-Prieto, J. L., M. A. Ortíz-Pérez, and A. Garrido-Pérez,
+\textit{Cambios morfológicos costeros en Isla del Carmen, Campeche, por el paso del huracán "Roxanne".} 
+Investigaciones geográficas 40, 48 -57, 1999.
+
+\bibitem{reynolds}\hypertarget{reynolds}{}	 
+Reynolds, M. H., K. N. Courtot, P. Berkowitz, C. D. Storlazzi, J. Moore, and E. Flint,
+\textit{Will the effects of sea-Level rise create ecological traps for Paci-c island
+seabirds?.} 
+PLOS ONE 10(9), 1-23, 2015.
+
+\bibitem{rosenzweig}\hypertarget{rosenzweig}{}	 
+Rosenzweig, M.,
+\textit{Species Diversity in Space and Time.} 
+Cambridge University Press, Cambridge, UK, 436 pp, 1995.
+
+\bibitem{triantis}\hypertarget{triantis}{}	 
+Triantis, K. A., F. Guilhaumont, and R. J. Whittaker,
+\textit{Species Diversity in Space and Time.} 
+The island species-area relationship: biology and statistics. Journal of Biogeography 39, 215-231, 2012.
+
+\bibitem{webb}\hypertarget{webb}{}	 
+Webb, A. P. and P. S. Kench,
+\textit{The dynamic response of reef islands to sea-level
+rise: Evidence from multi-decadal analysis of island change in the Central
+Pacific..} 
+Global and Planetary Change 72, 234-246, 2010.
+
+\bibitem{wetzel}\hypertarget{wetzel}{}	 
+Wetzel, F. T., W. D. Kissling, H. Beissmann, and D. J. Penn,
+\textit{Future climate
+change driven sea-level rise: secondary consequences from human
+displacement for island biodiversity.} 
+Global Change Biology 18(9), 2707-271, 2012.
+
+
+
+
+
+
+
+
+\end{thebibliography}
+
+
+
+
+\end{document}

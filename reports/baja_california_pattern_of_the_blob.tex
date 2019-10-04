@@ -1,0 +1,315 @@
+\documentclass{article} % El documento es de tipo artículo
+% A partir de aquí comienza el archivo que describe resultados para el segundo
+% Paquetes útiles para la configuración del documento (lenguaje, acentos, márgenes).
+\usepackage[utf8]{inputenc} % Paquete que permite escribir caracteres especiales
+\usepackage[english,spanish, es-tabla]{babel} % Paquete para cambiar "Cuadro" a "Tabla" en encabezados de tablas
+\usepackage{graphicx} % Paquete para importar figuras
+\usepackage{hyperref} % Paquete para agregar vínculos como enlaces
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usetikzlibrary{matrix,calc}
+\usepackage{stackengine,mathtools}
+\usepackage[a4paper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry} % Especifica márgenes de la página
+% Preámbulo del reporte. Título, fecha y autor de este archivo
+\title{Baja California pattern of ‘The Blob’}
+\author{Evaristo Rojas Mayoral*, Daniela Munguía Cajigas, Yutzil Lora Cabrera,\\ Mariana
+Salinas Matus, Alfonso Aguirre Muñoz, Federico Méndez Sanchez}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Condiciones oceanográficas asociadas al calentamiento anómalo del Pacífico del Noreste del 2014-2016 fueron analizadas a través de imágenes satelitales de la
+temperatura superficial del mar y la concentración de clorofila en un dominio
+sureño del Sistema de la Corriente de California. Para identificar la incidencia del
+fenómeno en las costas de Baja California, se analizó la variabilidad espacial y
+temporal en el área de estudio. Esto, a través de series de tiempo y perfiles
+latitudinales. Los resultados indican que el calentamiento anómalo del Pacífico del
+Noreste, registrado con base en fuertes anomalías positivas de la temperatura
+superficial del mar y anomalías negativas de la concentración de clorofila, llegó a
+las costas del Pacífico de Baja California a partir de mayo del 2014 y culminó en
+abril del 2016, alcanzando el máximo valor en enero del 2015. En comparación con
+las fuertes y continuas anomalías positivas de la temperatura superficial del mar,
+las anomalías negativas de la concentración de clorofila, asociadas al evento
+anómalo, no se muestran tan intensas y presentan un patrón más bien estacional.
+El análisis espacio-temporal de la temperatura superficial del mar confirma la
+incidencia de este fenómeno a lo largo de toda la región estudiada (20$^{\circ}$N hasta
+33$^{\circ}$N). Sin embargo, no ocurre lo mismo con la concentración de clorofila, ya que
+ésta no presenta anomalías negativas entre los 20$^{\circ}$N y 23$^{\circ}$N, la región más sureña del dominio estudiado.
+\end{abstract}
+
+\selectlanguage{english} 
+\begin{abstract}
+Oceanographic conditions associated with anomalous warming in the Northeast
+Pacific were analyzed using satellite composites of sea surface temperature and
+chlorophyll concentration in a southern domain of the California Current System. To
+identify the occurrence of this warm event along the Baja California coast, we
+studied spatial and temporal variations in sea surface temperature and chlorophyll
+concentrations in time series and latitudinal profiles. Our results, taken from remote
+sensing, show that the anomalies observed in the Northeastern Pacific, recorded as
+highly continuous positive anomalies in sea surface temperature and negative
+anomalies in chlorophyll concentration, arrived at Baja California coasts in May
+2014 and dissipated in April 2016, with maximum values observed in January 2015.
+Unlike the continuous high positive sea surface temperature anomalies related to
+the anomalous event, the negative chlorophyll concentration anomalies tended to
+be lower and showed a seasonal pattern. The spatio-temporal analysis of sea
+surface temperature demonstrated the occurrence of this warm event across the
+entire studied domain, with positive sea surface temperature anomalies ranging
+from 20$^{\circ}$N to 33$^{\circ}$N. Negative chlorophyll concentration anomalies occurred only
+from 23$^{\circ}$N to 33$^{\circ}$N, with non-negative anomalies in the southernmost region of our
+domain.
+\end{abstract}
+
+
+\section{Introduction}
+From December 2013 to March 2015, positive sea surface temperature (SST)
+anomalies were recorded in the Northeast Pacific, with the highest values exceeding
+three standard deviations. This warm event spread eastward from the south-central
+region of the Gulf of Alaska towards the continental shelf. This phenomenon
+became known as \textit{The Blob}.\\
+
+The origin of this event is linked to an atypical weather pattern generated from
+anomalous sea level pressure (SLP) over the Northeastern Pacific from October
+2013 to January 2014. The SLP anomalies in this region impacted wind-forced
+currents, wind mixing and surface heat loss due to evaporation, conduction, and
+radiation (\hyperlink{bond}{Bond \textit{et al.,}} 2015).\\
+
+The time series analyzed by \hyperlink{bond}{Bond \textit{et al.,}} 2015 show unusual patterns for 2013 and 2014. From September 2013 to February 2014, minimum wind speeds, negative wind stress, and mixed layer depth were lower than previous years. Local cooling from October 2013 to February 2014 was 30$\%$ less than average. During previous years, heat flow in the surface layer generally produced a 3$^{\circ}$C cooling effect in the course of 4 months; however, the cooling observed from 2013 to 2014 was only 2$^{\circ}$C.\\
+
+Physical conditions related to this event also had biological impacts in the region. During the winter and summer of 2014, extremely low chlorophyll concentrations, unusual species sightings and distributions were recorded. Along the southeastern coast of SE Alaska, the distribution of juvenile salmon and pomfret was atypical, while near the Washington coast, high catches of albacore were recorded during summer and fall 2014 (\hyperlink{bond}{Bond \textit{et al.,}} 2015).\\
+
+After the Blob phenomenon, a strong El Niño event was recorded from 2015-2016. Although this event has been compared with other strong El Niño events, like those of 1982-1983 and 1997-1998, the 2015-2016 event was found to be more stratified than in 1997 (\hyperlink{mcclatchie}{McClatchie \textit{et al.,}} 2016). Before the effects of this El Niño episode reached the eastern tropical Pacific, this region was already uncommonly warm due to the Blob (\hyperlink{jacox}{Jacox \textit{et al.,}} 2016).\\
+
+In order to understand the impacts of this warm event in the California Current System (CCS) it is important to consider wind variations that are due to local or regional atmospheric pressure anomalies. Warm events such as El Niño and The Blob may be related to remote forcing in the CCS as observed by wave propagation changes along the coast and thermocline or nutricline deepening (\hyperlink{fiedler}{Fiedler and Mantua}, 2016). Besides remote forcing, El Niño events can affect the CCS through atmospheric teleconnections and anomalous advection. Atmospheric teleconnections can displace the Aleutian Low to the southeast, reducing (increasing) the strength of upwelling (downwelling). Finally, the anomalous advection of southern warm and saline water related to El Niño events can also affect the CCS (\hyperlink{jacox}{Jacox \textit{et al.,}} 2016)..\\
+
+Positive SST anomalies in the CCS were first observed during mid-2014 (\hyperlink{leising}{Leising \textit{et al}.,} 2015). These anomalies, related to the Blob and the 2015-2016 El Niño, changed the physical and chemical structure of the water column, decreasing primary production and thus the available biomass for higher trophic levels (\hyperlink{gomez}{Gómez-Ocampo \textit{et al}.,} 2017).\\
+
+The main objective of this work is to identify events of warm water temperature and low chlorophyll concentration in Baja California associated with the warm Blob that occurred in Alaska from late 2013 through 2014, using monthly composites of chlorophyll concentration and sea surface temperature.\\
+
+\section{Methods}
+\subsection{Data}
+
+The monthly averages used in this work were obtained from chlorophyll concentration (Chl) (mg m$^{-3}$) images taken by MODIS (Moderate Resolution Imaging Spectroradiometer) aboard the Aqua (EOS PM) satellite. The monthly averages used for sea surface temperature (SST) ($^{\circ}$C) were calculated from daily composites retrieved from the Jet Propulsion Laboratory (JPL) MUR-SST (Multi-scale Ultra-high Resolution Sea Surface Temperature) database. The information used for both analyses is available at: \href{https://opendap.jpl.nasa.gov.}{\texttt{https://opendap.jpl.nasa.gov.}} The studied time period based on satellite imagery is of 14 years (January-2003 to January-2016) in an area ranging from 20.14 - 34.08 N to 121.50 - 110.00 W (blue rectangle from Figure \ref{fig:satellite}), which forms part of the southern region of the CCS.
+
+
+
+\begin{figure}
+  \begin{center}
+  \includegraphics[scale=0.5]{../resultados/mapa_espacio_cobertura_datos_satelitales_pacifico_norte.png}
+  \caption{Spatial coverage of satellite data. The blue rectangle represents the analyzed area and the black dots represent the central coordinates of the islands within the domain.}
+  \label{fig:satellite}
+  \end{center}
+\end{figure}
+
+%%  Figure \ref{fig:satellite} shows a boat.
+
+\subsection{Hovmöller diagrams}
+
+We represent our monthly composites retrieved from MUR and MODIS analyses as the matrix, 
+
+\begin{center}
+\begin{tikzpicture}[every node/.style={anchor=north east,fill=white,minimum width=0.8cm,minimum height=3mm}]
+
+\matrix (mA) [draw,matrix of math nodes]
+{
+a_{1,1,n} & \dots & a_{1,m,n} \\
+\vdots & \ddots & \vdots \\
+a_{1,1,n} & \dots & a_{1,m,n} \\
+};
+
+\matrix (mB) [draw,matrix of math nodes] at ($(mA.south west)+(1.5,0.7)$)
+{
+a_{1,1,2} & \dots & a_{1,m,2} \\
+\vdots & \ddots & \vdots \\
+a_{1,1,2} & \dots & a_{1,m,2} \\
+};
+
+\matrix (mC) [draw,matrix of math nodes] at ($(mB.south west)+(1.5,0.7)$)
+{
+a_{1,1,1} & \dots & a_{1,m,1} \\
+\vdots & \ddots & \vdots \\
+a_{l,1,1} & \dots & a_{l,m,1} \\
+};
+\draw[dashed](mA.north east)--(mC.north east);
+\draw[dashed](mA.north west)--(mC.north west);
+\draw[dashed](mA.south east)--(mC.south east);
+\draw (-6.5,-1) node {$A=$};
+\end{tikzpicture}
+\end{center}
+
+
+In A, the number of rows $(l)$ represent the number of latitude steps, the number of columns $(m)$ represent the number of longitude steps and the number of pages $(n)$ represent the number of time steps.\\
+
+To identify the spatio-temporal variations of the variables within A, we built Hovmöller diagrams as:\\
+
+\begin{equation*}
+H_{i,k}=\frac{1}{m} \sum_{j=1}^{m} a_{i,j,k} 
+\end{equation*}
+Where $i$ goes from $1$ to $l$, $j$ from $1$ to $m$ and $k$ from $1$ to $n$. Within H, the number of rows (l), represent the number of latitude steps and the number of columns (n) represent the number of time steps. The matrix H of $l\times n$ represents the Hovmöller diagram,
+ 
+\begin{equation*}
+H=
+\begin{bmatrix}
+    h_{1,1} & \dots  & h_{1,n} \\
+    \vdots & \ddots & \vdots \\
+    h_{l,1} & \dots  & h_{l,n}
+\end{bmatrix}
+\end{equation*}
+
+\subsection{Time series}
+
+To build time series from the monthly composites from MUR and MODIS analyses we, the information was represented with the matrix $X$ containing the monthly averages of the complete domain. The number of rows within $X$ represent the number of years ($y=14$) taken from satellite imagery and the number of columns represent the number of months ($m=12$) within a single year.
+
+\begin{equation*}
+X=
+\begin{bmatrix}
+    x_{1,1} & \dots  & x_{1,m} \\
+    \vdots & \ddots & \vdots \\
+    x_{y,1} & \dots  & x_{y,m}
+\end{bmatrix}
+\end{equation*}
+
+With the information from X, we calculated the oceanographic variables of the typical year and its standard deviation, using the equations:
+
+\begin{equation*}
+\mu_{i}=\frac{1}{y} \sum_{i=1}^{y} x_{i,j} 
+\end{equation*}
+
+\begin{equation*}
+S_{i}= \sqrt{\frac{1}{y-1} \sum_{i=1}^{y} (x_{i,j}-\mu_{i})^{2} }
+\end{equation*}
+where $x_{i,j}$ represents each of the monthly averages from the year $i$ to the year $y$ and from the month $j$ to the month $m$; $\mu_{i}$ and $S_{i}$ are vectors that represent the typical year and its standard deviations. Once the typical year and its standard deviation were calculated, the standardized anomalies were obtained with the following equation:
+
+\begin{equation*}
+x_{i,j}^{,}=\frac{x_{i,j}-\mu_{i}}{S_{i}}
+\end{equation*}
+where $x_{i,j}^{,}$ represents anomalies within the year $i$ and the month $j$.
+
+
+\section{Results and discussions}
+
+The Hovmöller diagrams in Figure \ref{fig:diagram} show changes in time and space for SST and Chl concentrations, where warm colors represent positive anomalies and cool colors negative anomalies. The anomalous behavior in these variables can be observed at the beginning of 2014. Anomalies are more evident in Figure \ref{fig:diagram}b for SST, with an area of only positive values towards the end of the time series (2014-2016), corresponding to anomalies of up to 3$^{\circ}$C. A similar pattern, associated to the Blob phenomenon, is described by \hyperlink{bond}{Bond \textit{et al}.,} (2015).\\
+
+In early 2014, the highest SST anomalies were recorded in latitudes below 26$^{\circ}$N (Figure \ref{fig:diagram}b). This coincides with the results obtained by \hyperlink{gomez}{Gómez-Ocampo \textit{et al}}. (2017) who emphasized that this region is influenced by a mixture of water masses, such as water from the CC, Subtropical Surface Water (StSW) and Tropical Surface Water.\\
+
+Figure \ref{fig:diagram}a shows the annual and seasonal behavior of chlorophyll concentration. The seasonal behavior for every year can be observed by the warm and cool colored bands representing positive and negative anomalies, respectively. Starting from 2014, Chl concentration anomalies during the summer were negative. This is related to the changes in the physicochemical conditions of the CC due to the anomalous behavior of the CCS.\\
+
+Also in Figure \ref{fig:diagram}a, it can be observed that Chl anomalies are not as strong at the 24$^{\circ}$N and 28$^{\circ}$N latitudes. Even though our spatial coverage of satellite data has a width of about 1,200 km, it is worth noting a possible coastal influence in this variable. Punta Eugenia, located at 28$^{\circ}$N, has oceanographic structures that prevent nutrient loss by horizontal transport and favor phytoplankton development by turbulence (\hyperlink{morales}{Morales-Zárate \textit{et al.,}} 2000). These structures at 28$^{\circ}$N may be responsible for maintaining weak Chl concentration anomalies. At 24$^{\circ}$N, similar processes may be responsible for the observed Chl signal, although further research is necessary to identify the potential mechanisms involved. The weak Chl anomalies at these latitudes persisted for the 14 years analyzed, including those where the Blob was present, indicating that chlorophyll concentrations were not affected by this phenomenon or by any other seasonal event.\\
+
+\begin{figure}
+  \begin{center}
+  \includegraphics[scale=0.5]{../resultados/diagrama_hovmoller_anomalias_mensuales_clorofila_pacifico_norte.png}
+  \caption{Hövmoller diagrams of monthly anomalies of (a) Chl ($mg$ $m^{-3}$) and (b) SST ($^{\circ}$C)}
+  \label{fig:diagram}
+  \end{center}
+\end{figure}
+
+Figure \ref{fig:typical} (a) and (b) show a seasonal behavior of both surface variables studied. Chl shows maximum values during spring (March to June) and SST during summer (August to October). Minimum Chl values are observed during late summer and early autumn (September to November) and minimum SST values are observed from late winter to early spring (February to April). These results are consistent with those found by other authors, such as \hyperlink{lynn}{Lynn and Simpson} (1987), \hyperlink{kahru}{Kahru and Mitchell} (2001) and \hyperlink{legaard}{Legaard and Thomas} (2006) who describe the seasonal variation in the CCS. The latter reported a different seasonal pattern of SST and chlorophyll between the southern and northern regions of the Baja California Peninsula. However, the range of values of SST and Chl concentration typical years for the area and the years analyzed in this work (Figure \ref{fig:typical}) coincide with the interval for SST and Chl climatological mean calculated by \hyperlink{legaard}{Legaard and Thomas} (2006) from 1997 to 2003.
+
+\begin{figure}
+  \begin{center}
+  \includegraphics[scale=0.5]{../resultados/ano_tipico_clorofila.png}
+  \caption{Typical year for (a) Chl ($mg$ $m^{-3}$) and (b) SST ($^{\circ}$C) within the blue rectangle of Figure \ref{fig:satellite}. The vertical bars represent standard deviations.}
+  \label{fig:typical}
+  \end{center}
+\end{figure}
+
+
+Figure \ref{fig:anomalies_chl} and Figure \ref{fig:anomalies_sst} show standardized monthly anomalies of Chl and SST, respectively. In these graphs it is possible to see that recent years differ from normal conditions. Chl anomalies are below one standard deviation (Figure \ref{fig:anomalies_chl}), while SST anomalies are above one standard deviation (Figure \ref{fig:anomalies_sst}). The abnormal behavior that intensified in 2014 is more noticeable in SST records, with positive anomalies near 2.5 standard deviations. The strong positive SST anomalies were recorded by the MUR-SST from May 2014 through April 2016, with maximum values observed in January 2015.\\
+
+Beginning in 2014, atypical warming of the CCS (Figure \ref{fig:anomalies_sst}) could have affected water-column conditions in a manner analogous an El Niño event, reflected in a deepening of the thermocline. Under these conditions, water with low nutrient content is brought to the surface during upwelling events (\hyperlink{espinosa}{Espinosa-Carreón} y \hyperlink{espinosa}{Valdez-Holguín}, 2007).\\
+
+The phytoplankton community is easily modified by changes in water-column temperature or nutrient concentration (\hyperlink{espinosa}{Espinosa-Carreón} y \hyperlink{espinosa}{Valdez-Holguín}, 2007). The Chl concentration anomalies in the analyzed time series showed minimum values during the years related to the Blob phenomenon (Figure \ref{fig:anomalies_chl}). During the Blob phenomenon, high positive SST anomalies and others factors may have been associated with an increase stratification of the water-column (\hyperlink{gomez}{Gómez-Ocampo \textit{et al.,}} 2017).\\
+
+\begin{figure}
+  \begin{center}
+  \includegraphics[scale=0.5]{../resultados/anomalia_mensual_estandarizada_clorofila_2003_2016_pacifico_norte.png}
+  \caption{Standardized monthly anomalies ($\delta$) of Chl, (a) from 2003 to 2016 and (b) from 2013 to 2016. The green line color in (a) and (b) represents anomalies between $\pm$ one standard deviation, red line color represents anomalies above one standard deviation, and blue line color represents anomalies below one standard deviation.}
+  \label{fig:anomalies_chl}
+  \end{center}
+\end{figure}
+
+
+\begin{figure}
+  \begin{center}
+  \includegraphics[scale=0.5]{../resultados/anomalia_mensual_estandarizada_temperatura_2003_2016_pacifico_norte.png}
+  \caption{ Standardized monthly anomalies ($\delta$) of SST, (a) from 2003 to 2016 and (b) from 2013 to 2016. The green line color in (a) and (b) represents anomalies between $\pm$ one standard deviation, red line color represents anomalies above one standard deviation, and blue line color represents anomalies below one standard deviation.}
+  \label{fig:anomalies_sst}
+  \end{center}
+\end{figure}
+
+
+\section{Conclusion	}
+
+Positive SST and negative Chl concentration anomalies were registered in nearly the entire studied domain, with positive SST anomalies recorded in the southernmost region of the domain. These anomalies reached the Baja California Peninsula during May 2014 and continued until April 2016, with the maximum values observed in January 2015. This period overlaps with the Blob phenomenon that appeared in the south-central region of the Gulf of Alaska during 2013-2014 and the El Niño event of 2015-2016.\\
+
+\section{Acknowledgements}
+
+We thank Andrea Lievana MacTavish for her assistance with the translation of this paper. We also thank Luis Navarro Verduzco for his assistance with the tables presented. Finally we thank all of our colleagues from Grupo de Ecología y Conservación de Islas.\\
+
+
+\begin{thebibliography}{10}
+
+\bibitem{bond}\hypertarget{bond}{}	 
+Bond N. A., M. F. Cronin, H. Freeland and N. Mantua, 
+\textit{Causes and impacts of the 2014 warm anomaly in the NE Pacific.} 
+Geophysical Research Letter 42, doi:10.1002/2015GL063306, 2015. 
+ 
+\bibitem{espinosa} \hypertarget{espinosa}{}	 
+Espinosa-Carreón T. L and J. E Valdez-Holguín, 
+\textit{Variabilidad interanual de clorofila en el Golfo de California.} 
+Ecología Aplicada 6(1-2), 83-92, 2007.  
+
+\bibitem{fiedler} \hypertarget{fiedler}{}
+Fiedler P. and N. Mantua,
+\textit{Warm events in the California Current and Gulf of Alaska blob region: El Niño or not?.} 
+Second Pacific Anomalies Workshop, Seattle, Washington, January 20-21, 2016. 
+ 
+\bibitem{gomez} \hypertarget{gomez}{}
+Gómez-Ocampo E., G. Gaxiola-Castro, R. Durazo and E. Beier,
+\textit{Effects of the 2013-2016 warm anomalies on the California Current phytoplankton.} 
+Deep-Sea Research Part II, \texttt{http://dx.doi.org/10.1016/j.dsr2.2017.01.005}, 2017.
+
+\bibitem{jacox} \hypertarget{jacox}{}
+Jacox M. G., E.L. Hazen, K. D. Zaba, D. L. Rudnick, C. A. Edwards, A. M. Moore and S. J. Bograd,
+\textit{Impacts of the 2015-2016 El Niño on the California Current System: Early assessment and comparison to past events.} 
+Geophysical Research Letter 43, doi:10.1002/2016GL069716.
+  
+\bibitem{kahru} \hypertarget{kahru}{}
+Kahru M. and B.G. Mitchell,
+\textit{Seasonal and nonseasonal variability of satellite-derived chlorophyll and colored dissolved organic matter concentration in the California Current.} 
+Journal of Geophysical Research 106(C2), 2517-2529, 2001.
+
+
+\bibitem{legaard} \hypertarget{legaard}{}
+Legaard, K. R. and A. C. Thomas,
+\textit{Spatial patterns in seasonal and interannual variability of chlorophyll and sea surface temperature in the California Current.} 
+Journal of Geophysical Research 111(C06032), doi:10.1029/2005JC003282.
+
+
+ 
+\bibitem{leising} \hypertarget{leising}{}
+Leising A. W., I. D. Schroeder, S. J. Bograd, J. Abell, R. Durazo, G. Gaxiola-Castro, E. P. Bjorkstedt, J. Field, K. Sakuma, R. R. Robertson, R. Goericke, W. T. Peterson, R. Brodeur, C. Barceló, T. D. Auth, E. A. Daly, R. M. Suryan, A. J. Gladics, J. M. Porquez, S. Mcclatchie, E. D. Weber, W. Watson, J. A. Santora, W. J. Sydeman, S. R. Melin, F. P. Chavez, R. T. Golightly, S. R. Schneider, J. Fisher, C. Morgan, R. Bradley, and P. Warybok,
+\textit{State of the California Current 2014-2015: Impacts of the warm-water “Blob”.} 
+CalCOFI Rep., Vol. 56, 2015.
+
+\bibitem{lynn} \hypertarget{lynn}{}
+Lynn J.R. and J.J. Simpson,
+\textit{The California Current System: The Seasonal Variability of its Physical Characteristics.} 
+Journal of Geophysical Research 92(C12), 12.947-12.966, 1987.
+
+
+\bibitem{mcclatchie} \hypertarget{mcclatchie}{}
+Mcclatchie S., R. Goericke, A. Leising, T. D. Auth, E. Bjorkstedt, R. R. Robertson, R. D. Brodeur, X. Du, E. A. Daly, C. A. Morgan, F. P. Chavez, A. J. Debich, J. Hildebrand, J. Field, K. Sakuma, M. G. Jacox, M. Kahru, R. Kudela, C. Anderson, B. E. Lavaniegos, J. Gomez-Valdes, S. P. A. Jimenez-Rosenberg, R. Mccabe, S. R. Melin, M. D. Ohman, L. M. Sala, B. Peterson, J. Fisher, I. D. Schroeder, S. J. Bograd, E. L. Hazen, S. R. Schneider, R. T. Golightly, R. M. Suryan, A. J. Gladics, S. Loredo, J. M. Porquez, A. R. Thompson, E. D. Weber, W. Watson, V. Trainer, P. Warzybok, R. Bradley, and J. Jahnck,
+\textit{State of the California Current 2015-2016: Comparison with the 1997-98 El Niño.} 
+CalCOFI Rep., Vol. 57, 2016.
+
+\bibitem{morales} \hypertarget{morales}{}
+Morales-Zárate M. V, S. E. Lluch-Cota, D. Voltolina and E. M. Muñoz-Mejía,
+\textit{Comparación entre zonas de alta actividad biológica en la costa occidental de Baja California:Punta Eugenia y Punta Baja. En BAC: Centros de Actividad Biológica del Pacífico mexicano (D. Lluch-Belda, J. Elorduy-Garay, S.E. Lluch-Cota and G. Ponce-Díaz, Eds.)} 
+BCS. México: Centro de Investigaciones Biológicas del Noroeste, S.C., 104-115, 2000.
+
+\end{thebibliography}
+
+\end{document}
