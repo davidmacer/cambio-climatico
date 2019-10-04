@@ -1,2 +1,1 @@
-Efectos de los impactos del cambio climatico en las islas de México.
-===
+# Efectos de los impactos del cambio climático en las islas de México.
