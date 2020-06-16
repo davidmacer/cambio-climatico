@@ -2,7 +2,7 @@
 
 ```
 BRANCH='nombre/rama'
-REMOTE='IslasGECI'
+REMOTE='islasgeci'
 REPO='cambio-climatico'
 
 rm --force --recursive ${REPO}
