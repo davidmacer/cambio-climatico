@@ -1,7 +1,6 @@
 # I. Definición del _phony_ *all* que enlista todos los objetivos principales
 # ===========================================================================
-all: \
-	README.html \
+all: tests \
 	reports/baja_california_pattern_of_the_blob.pdf \
 	reports/impacts_of_climate_change_on_mexican_islands.pdf
 
