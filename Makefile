@@ -88,11 +88,6 @@ $(pngNumeroTotalEspeciesPorAreaTodasIslas) $(pngSuperficiePerdidaIncrementoNivel
 # ===========================================================================
 # Elimina los residuos de LaTeX
 
-requirements:
-	hg clone --updaterev development https://bitbucket.org/IslasGECI/misctools
-	cd misctools && \
-    make install
-
 tests:
 	geci-checkanalyses
 
