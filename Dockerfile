@@ -1,1 +1,1 @@
-FROM islasgeci/base:2d95
+FROM islasgeci/base:56ca

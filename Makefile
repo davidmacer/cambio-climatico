@@ -1,7 +1,6 @@
 # I. Definición del _phony_ *all* que enlista todos los objetivos principales
 # ===========================================================================
-all: \
-	README.html \
+all: tests \
 	reports/baja_california_pattern_of_the_blob.pdf \
 	reports/impacts_of_climate_change_on_mexican_islands.pdf
 
@@ -49,11 +48,6 @@ pngEspeciesPerdidasIncrementoNivelMarTodasIslas = \
 
 # III. Reglas para construir los objetivos principales
 # ===========================================================================
-# Objetivo para generar el README.pdf
-
-README.html: README.md
-	pandoc $< --output=$@
-
 reports/baja_california_pattern_of_the_blob.pdf: reports/baja_california_pattern_of_the_blob.tex \
 	$(pngMapaCoberturaDatosPacificoNorte) \
 	$(pngDiagramaMatricialPacificoNorte) \
@@ -87,11 +81,6 @@ $(pngNumeroTotalEspeciesPorAreaTodasIslas) $(pngSuperficiePerdidaIncrementoNivel
 # V. Reglas del resto de los phonies
 # ===========================================================================
 # Elimina los residuos de LaTeX
-
-requirements:
-	hg clone --updaterev development https://bitbucket.org/IslasGECI/misctools
-	cd misctools && \
-    make install
 
 tests:
 	geci-checkanalyses
