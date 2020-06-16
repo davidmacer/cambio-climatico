@@ -48,11 +48,6 @@ pngEspeciesPerdidasIncrementoNivelMarTodasIslas = \
 
 # III. Reglas para construir los objetivos principales
 # ===========================================================================
-# Objetivo para generar el README.pdf
-
-README.html: README.md
-	pandoc $< --output=$@
-
 reports/baja_california_pattern_of_the_blob.pdf: reports/baja_california_pattern_of_the_blob.tex \
 	$(pngMapaCoberturaDatosPacificoNorte) \
 	$(pngDiagramaMatricialPacificoNorte) \
