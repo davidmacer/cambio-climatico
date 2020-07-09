@@ -1,5 +1,4 @@
-image: islasgeci/base:56ca
-
+image: islasgeci/cambio-climatico:4972
 pipelines:
   default:
     - step:
