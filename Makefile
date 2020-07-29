@@ -74,12 +74,12 @@ reports/impacts_of_climate_change_on_mexican_islands.pdf: reports/impacts_of_cli
 #Construye dependencias para el artículo del blob
 
 $(pngMapaCoberturaDatosPacificoNorte) $(pngDiagramaMatricialPacificoNorte) $(pngDiagramaHovmollerAnomaliasPacificoNorte) $(pngAnoTipicoPacificoNorte) $(pngAnomaliaMensualEstandarizadaPacificoNorte): src/make_image
-	if [ ! -d $(@D) ]; then mkdir -p $(@D); fi
+	mkdir --parents $(@D)
 	$< $(@F)
 
 #Construye dependencias para el artículo de cambio climático
 $(pngNumeroTotalEspeciesPorAreaTodasIslas) $(pngSuperficiePerdidaIncrementoNivelMarTodasIslas) $(pngEspeciesAreaPerdidaIslasGolfoMexicoMarCaribe) $(pngEspeciesPerdidasIncrementoNivelMarTodasIslas): src/make_image
-	if [ ! -d $(@D) ]; then mkdir -p $(@D); fi
+	mkdir --parents $(@D)
 	$< $(@F) 
 
 # V. Reglas del resto de los phonies
