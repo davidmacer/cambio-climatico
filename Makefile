@@ -20,37 +20,37 @@ ncVariablesOceanograficas = \
 # Variables a resultados
 #Resultados para el artículo de el blob
 pngMapaCoberturaDatosPacificoNorte = \
-	resultados/mapa_espacio_cobertura_datos_satelitales_pacifico_norte.png
+	reports/figures/mapa_espacio_cobertura_datos_satelitales_pacifico_norte.png
 
 pngDiagramaMatricialPacificoNorte = \
-	resultados/diagrama_matricial_datos_mensuales.png
+	reports/figures/diagrama_matricial_datos_mensuales.png
 
 pngDiagramaHovmollerAnomaliasPacificoNorte = \
-	resultados/diagrama_hovmoller_anomalias_mensuales_clorofila_pacifico_norte.png \
-	resultados/diagrama_hovmoller_anomalias_mensuales_temperatura_pacifico_norte.png
+	reports/figures/diagrama_hovmoller_anomalias_mensuales_clorofila_pacifico_norte.png \
+	reports/figures/diagrama_hovmoller_anomalias_mensuales_temperatura_pacifico_norte.png
 
 pngAnoTipicoPacificoNorte = \
-	resultados/ano_tipico_clorofila.png \
-	resultados/ano_tipico_temperatura.png
+	reports/figures/ano_tipico_clorofila.png \
+	reports/figures/ano_tipico_temperatura.png
 
 pngAnomaliaMensualEstandarizadaPacificoNorte = \
-	resultados/anomalia_mensual_estandarizada_clorofila_2003_2016_pacifico_norte.png \
-	resultados/anomalia_mensual_estandarizada_clorofila_2013_2016_pacifico_norte.png \
-	resultados/anomalia_mensual_estandarizada_temperatura_2003_2016_pacifico_norte.png \
-	resultados/anomalia_mensual_estandarizada_temperatura_2013_2016_pacifico_norte.png
+	reports/figures/anomalia_mensual_estandarizada_clorofila_2003_2016_pacifico_norte.png \
+	reports/figures/anomalia_mensual_estandarizada_clorofila_2013_2016_pacifico_norte.png \
+	reports/figures/anomalia_mensual_estandarizada_temperatura_2003_2016_pacifico_norte.png \
+	reports/figures/anomalia_mensual_estandarizada_temperatura_2013_2016_pacifico_norte.png
 
 #Resultados para el artículo de cambio climático
 pngNumeroTotalEspeciesPorAreaTodasIslas = \
-	resultados/grafica_loglog_especies_por_area_todas_islas.png
+	reports/figures/grafica_loglog_especies_por_area_todas_islas.png
 
 pngSuperficiePerdidaIncrementoNivelMarTodasIslas = \
-	resultados/porcentaje_area_perdida_incremento_nivel_mar_todas_islas.png
+	reports/figures/porcentaje_area_perdida_incremento_nivel_mar_todas_islas.png
 
 pngEspeciesAreaPerdidaIslasGolfoMexicoMarCaribe = \
-	resultados/numero_especies_porcentaje_area_perdida_incremento_nivel_mar_islas_golfo_mar_caribe.png
+	reports/figures/numero_especies_porcentaje_area_perdida_incremento_nivel_mar_islas_golfo_mar_caribe.png
 
 pngEspeciesPerdidasIncrementoNivelMarTodasIslas = \
-	resultados/especies_perdidas_incremento_nivel_mar_todas_islas.png
+	reports/figures/especies_perdidas_incremento_nivel_mar_todas_islas.png
 
 # III. Reglas para construir los objetivos principales
 # ===========================================================================

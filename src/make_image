@@ -6,4 +6,4 @@ from PIL import Image
 img = Image.new('RGB', (350,350))
 img.putdata((0,1))
 for nombre_archivo in sys.argv[1:]:
-    img.save(f'resultados/{nombre_archivo}')
+    img.save(f'reports/figures/{nombre_archivo}')

@@ -4,16 +4,16 @@
         "docker_parent_image": "islasgeci/base:2d95",
         "report": "baja_california_pattern_of_the_blob.pdf",
         "results": [
-          "resultados/mapa_espacio_cobertura_datos_satelitales_pacifico_norte.png",
-          "resultados/diagrama_matricial_datos_mensuales.png",
-          "resultados/diagrama_hovmoller_anomalias_mensuales_clorofila_pacifico_norte.png",
-          "resultados/diagrama_hovmoller_anomalias_mensuales_temperatura_pacifico_norte.png",
-          "resultados/ano_tipico_clorofila.png",
-          "resultados/ano_tipico_temperatura.png",
-          "resultados/anomalia_mensual_estandarizada_clorofila_2003_2016_pacifico_norte.png",
-          "resultados/anomalia_mensual_estandarizada_clorofila_2013_2016_pacifico_norte.png",
-          "resultados/anomalia_mensual_estandarizada_temperatura_2003_2016_pacifico_norte.png",
-          "resultados/anomalia_mensual_estandarizada_temperatura_2013_2016_pacifico_norte.png"
+          "reports/figures/mapa_espacio_cobertura_datos_satelitales_pacifico_norte.png",
+          "reports/figures/diagrama_matricial_datos_mensuales.png",
+          "reports/figures/diagrama_hovmoller_anomalias_mensuales_clorofila_pacifico_norte.png",
+          "reports/figures/diagrama_hovmoller_anomalias_mensuales_temperatura_pacifico_norte.png",
+          "reports/figures/ano_tipico_clorofila.png",
+          "reports/figures/ano_tipico_temperatura.png",
+          "reports/figures/anomalia_mensual_estandarizada_clorofila_2003_2016_pacifico_norte.png",
+          "reports/figures/anomalia_mensual_estandarizada_clorofila_2013_2016_pacifico_norte.png",
+          "reports/figures/anomalia_mensual_estandarizada_temperatura_2003_2016_pacifico_norte.png",
+          "reports/figures/anomalia_mensual_estandarizada_temperatura_2013_2016_pacifico_norte.png"
         ],
         "scripts": [
           "src/make_image"
@@ -39,10 +39,10 @@
       "docker_parent_image": "islasgeci/base:2d95",
       "report": "impacts_of_climate_change_on_mexican_islands.pdf",
       "results": [
-        "resultados/grafica_loglog_especies_por_area_todas_islas.png",
-        "resultados/porcentaje_area_perdida_incremento_nivel_mar_todas_islas.png",
-        "resultados/numero_especies_porcentaje_area_perdida_incremento_nivel_mar_islas_golfo_mar_caribe.png",
-        "resultados/especies_perdidas_incremento_nivel_mar_todas_islas.png"
+        "reports/figures/grafica_loglog_especies_por_area_todas_islas.png",
+        "reports/figures/porcentaje_area_perdida_incremento_nivel_mar_todas_islas.png",
+        "reports/figures/numero_especies_porcentaje_area_perdida_incremento_nivel_mar_islas_golfo_mar_caribe.png",
+        "reports/figures/especies_perdidas_incremento_nivel_mar_todas_islas.png"
       ],
       "scripts": [
         "src/make_image"
