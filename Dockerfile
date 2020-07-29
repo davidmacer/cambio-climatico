@@ -1,4 +1,4 @@
-FROM islasgeci/base:56ca
+FROM islasgeci/base:13fe
 RUN pip install Pillow
 RUN git clone https://github.com/IslasGECI/misctools.git && \
     cd misctools && \
