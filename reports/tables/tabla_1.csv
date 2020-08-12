@@ -1,0 +1,7 @@
+Classification,Type,Quantity,Surface area(ha),Constribution(%)
+$<$ 1,Rock,{1,385} (31.3),586,0.1 
+1 to 9,Islet,{1,783} (40.2),{6,777},0.8 
+10 to 99,Small Island,958 (21.6),{30,775},3.8
+100 to {1,000},Medium Island,237 (5.3),{69,470},8.5 
+$>$ {1,000},Large Island,67 (1.5),{705,691},86.8
+Total,,{4,430} (100),{813,299},100 
