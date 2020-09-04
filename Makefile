@@ -90,7 +90,8 @@ tests:
 	geci-checkanalyses
 
 clean:
-	rm reports/*.pdf
-	rm reports/*.aux
-	rm reports/*.out
-	rm reports/*.log
+	rm --force reports/*.pdf
+	rm --force reports/*.aux
+	rm --force reports/*.out
+	rm --force reports/*.log
+	rm --force --recursive resultados/
