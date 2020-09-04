@@ -1,7 +1,7 @@
 [
     { "name": "el patrón en baja california de el blob",
         "description": "Condiciones oceanográficas asociadas al calentamiento anómalo del Pacífico del Noreste del 2014-2016 fueron analizadas a través de imágenes satelitales de la temperatura superficial del mar y la concentración de clorofila en un dominio sureño del Sistema de la Corriente de California. Para identificar la incidencia del fenómeno en las costas de Baja California, se analizó la variabilidad espacial y temporal en el área de estudio. Esto, a través de series de tiempo y perfiles latitudinales. Los resultados indican que el calentamiento anómalo del Pacífico del Noreste, registrado con base en fuertes anomalías positivas de la temperatura superficial del mar y anomalías negativas de la concentración de clorofila, llegó a las costas del Pacífico de Baja California a partir de mayo del 2014 y culminó en abril del 2016, alcanzando el máximo valor en enero del 2015. En comparación con las fuertes y continuas anomalías positivas de la temperatura superficial del mar, las anomalías negativas de la concentración de clorofila, asociadas al evento anómalo, no se muestran tan intensas y presentan un patrón más bien estacional. El análisis espacio-temporal de la temperatura superficial del mar confirma la incidencia de este fenómeno a lo largo de toda la región estudiada (20°N hasta 33°N). Sin embargo, no ocurre lo mismo con la concentración de clorofila, ya que ésta no presenta anomalías negativas entre los 20°N y 23°N, la región más sureña del dominio estudiado.",
-        "docker_parent_image": "islasgeci/base:2d95",
+        "docker_parent_image": "islasgeci/base:13fe",
         "report": "baja_california_pattern_of_the_blob.pdf",
         "results": [
           "reports/figures/mapa_espacio_cobertura_datos_satelitales_pacifico_norte.png",
@@ -36,7 +36,7 @@
     },
     { "name": "los impactos del cambio cimático en las islas mexicanas",
       "description": "Se analizaron, a través de modelos digitales de elevación, los impactos del cambio climático por elevación del nivel del mar sobre la superficie de 28 elementos insulares y las especies marinas y terrestres pertenecientes a 26 de estas islas. Entre las islas estudiadas se encuentran islas del Golfo de California, Pacífico Norte, Pacífico Tropical y Golfo de México y Mar Caribe, siendo el primero el mar que contiene la mayor cantidad de islas estudiadas en este trabajo. A partir de la simulación de 3 diferentes escenarios de elevación del nivel del mar inducido por el cambio climático, se encontró que la mayor de las pérdidas de superficie insular, con respecto a la superficie insular inicial, es Arrecife Alacranes, seguida de Isla Del Carmen, frente a Campeche, ambas pertenecientes al Golfo de México y Mar Caribe. En cuanto a la riqueza de especies, ante los tres escenarios Arrecife Alacranes sufre la mayor pérdida de especies, seguida de Banco Chinchorro, también pertenecientes al Golfo de México y Mar Caribe. En total se estima que casi el 9% de la superficie insular y el 16.5% de las especies del conjunto de islas estudiadas se pierde ante un escenario de 5 metros de elevación del nivel del mar, el cual representa al escenario más pesimista del estudio.",
-      "docker_parent_image": "islasgeci/base:2d95",
+      "docker_parent_image": "islasgeci/base:13fe",
       "report": "impacts_of_climate_change_on_mexican_islands.pdf",
       "results": [
         "reports/figures/grafica_loglog_especies_por_area_todas_islas.png",
