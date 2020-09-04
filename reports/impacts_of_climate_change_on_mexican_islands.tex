@@ -7,6 +7,7 @@
 \usepackage{hyperref} % Paquete para agregar vínculos como enlaces
 %\usepackage{natbib}
 \usepackage{booktabs}
+\usepackage{csvsimple}
 \usepackage{amsmath}
 \usepackage{tikz}
 \usepackage{multirow}
@@ -84,29 +85,14 @@ islands such as Tiburón (119,875 ha), Ángel de la Guarda (93,052 ha), Cozumel
 which will be the most severely affected by sea-level rise— cover 4.5\% and 1.3\%,
 respectively.\\
 
-
 \begin{table}
+\centering
 \caption{Classification of Mexican insular elements based their surface area (ha), elaborated from INEGI (2013).}
-\vspace{2mm}
-\begin{tabular}{ccccc}
-\hline 
-\textbf{Classification} & \textbf{Type} & \textbf{Quantity} & \textbf{Surface area (ha)} & \textbf{Constribution (\%)} \\ 
-\hline 
-$<$ 1 & Rock & 1,385 (31.3) & 586 & 0.1 \\ 
-
-1 to 9 & Islet & 1,783 (40.2) & 6,777 & 0.8 \\ 
- 
-10 to 99 & Small Island & 958 (21.6) & 30,775 & 3.8 \\ 
-
-100 to 1,000 & Medium Island & 237 (5.3) & 69,470 & 8.5 \\ 
-
-$>$ 1,000 & Large Island & 67 (1.5) & 705,691 & 86.8 \\ 
-\hline 
-\multicolumn{2}{r}{\textbf{Total}} & \textbf{4,430 (100)} & \textbf{813,299} & \textbf{100} \\ 
-\hline
-\label{Tab:tab1} 
-\end{tabular} 
+\csvautotabular{tables/tabla_1.csv,respect percent=true}
+\label{Tab:tab1}
 \end{table}
+
+
 
 In terms of biodiversity, Mexican islands host at least 8.3\% of all the vascular plants and terrestrial vertebrates found in the country. According to the National Commission for the Knowledge and Use of Biodiversity, CONABIO (acronym in Spanish), the islands with the greatest species richness are: Clarión (646 marine and 346 terrestrial), Cozumel (487 and 437), Cayo Centro (574 and 174), Arrecife Alacranes (695 and 162) and Espíritu Santo (428 y 241). Similarly, each island’s value, in terms of biodiversity, is associated with the level of endemism that it possess. In terms of surface area, the islands of Mexico concentrate 14 times the number of endemic species than the mainland. The islands with the largest number
 of endemic species are: Guadalupe (36 species), Tiburón (19), Espíritu Santo (14),
@@ -467,71 +453,13 @@ and 81.4\% of the original surface area was lost under the 1 m, 3 m, 5 m scenari
 respectively.
 
 \begin{table}
+\centering
 \caption{Loss of different island ecosystems, by vegetation type, due to a rise in
 sea-level of 1 m, 3 m, or 5 m.}
-\vspace{2mm}
-\begin{adjustwidth}{-0.5cm}{}
-\setlength{\tabcolsep}{4pt}
-\begin{tabular}{ccccc}
-\hline
-\multirow{2}{*}{\textbf{Island}}  & \multirow{2}{*}{\textbf{Vegetation type}} & \multicolumn{3}{c}{\textbf{Loss (\%)}}  \\
- & & \textbf{1m} & \textbf{3m} & \textbf{5m} \\
- 
-\hline
-Arrecife Alacranes & Vegetation with coastal dunes & 39.65 & 62.97 & 100.00 \\
-Banco Chinchorro &    Vegetation with coastal dunes & 100.00 & 100.00 & 100.00 \\
-Banco Chinchorro &     Coastal tropical dry forest & 5.31 & 18.84 & 66.83 \\
-Banco Chinchorro &      Halophile vegetation & 7.46 & 18.96 & 48.20 \\
-Carmen-Bahía de Loreto &       Halophile vegetation & 31.33 & 37.36 & 44.55 \\
-Carmen-Bahía de Loreto &  Sarcocaulescent scrub with giant cactus & 10.50 & 18.23 & 31.68 \\
-Carmen-Bahía de Loreto & Sarcocaulescent scrub with subinerm scrub & 0.60 & 1.22 &  2.44 \\
-Carmen-Bahía de Loreto & Sarcocaulescent scrub with subinerm scrub & 0.68 & 1.21 &  2.17 \\
-Cedros &     Without apparent vegetation & 1.13 & 2.95 &  7.68 \\
-Cedros &      Sarco-crasicaule scrub & 1.02 & 1.88 &  3.48 \\
-Cedros &     Rosetophilous coastal scrub & 1.49 & 2.19 &  3.23 \\
-Cedros &         Chaparral & 0.57 & 0.86 &  1.31 \\
-Clarión -Revillagigedo &       Tropical grassland & 3.17 & 9.88 & 30.78 \\
-Clarión -Revillagigedo &        Tropical scrub & 2.91 & 5.00 &  8.60 \\
-Coronados-Bahía de Loreto &    Xeric scrub/Halophile vegetation & 1.11 & 2.69 &  6.49 \\
-Cozumel &    Vegetation with coastal dunes & 68.81 & 82.95 & 100.00 \\
-Cozumel &         Mangrove & 10.22 & 28.84 & 81.40 \\
-Cozumel &    Vegetation with coastal dunes & 3.33 & 13.45 & 54.32 \\
-Cozumel &      Semi-evergreen forest & 0.12 & 0.69 &  3.89 \\
-Danzante-Bahía de Loreto &    Xeric scrub/Halophile vegetation & 2.22 & 4.36 &  8.55 \\
-Espiritu Santo &       Halophile vegetation & 6.22 & 20.68 & 68.70 \\
-Espiritu Santo &    Vegetation with coastal dunes & 16.28 & 21.84 & 29.31 \\
-Espiritu Santo &  Sarcocaulescent scrub with giant cactus & 3.03 & 9.12 & 27.47 \\
-Espiritu Santo & Sarcocaulescent scrub with subinerm scrub & 1.30 & 3.96 & 12.07 \\
-Guadalupe &     Natural palm-tree forest & 2.96 & 5.10 &  8.80 \\ 
-Guadalupe &      Coastal succulent scrub & 1.97 & 3.41 &  5.91 \\
-Guadalupe &         Xeric scrub & 0.80 & 1.59 &  3.17 \\
-Isabel &         Bare ground & 100.00 & 100.00 & 100.00 \\
-Isabel &     Tropical deciduous forest & 13.02 & 24.10 & 44.61 \\
-Isla del Carmen &         Mangrove & 54.98 & 73.53 & 98.35 \\
-Larga-Islas Marietas &         Grassland & 21.11 & 31.55 & 47.16 \\
-María Cleofas & Tropical and subtropical deciduous forest & 1.25 & 2.67 &  5.68 \\
-María Madre-Islas Marías & Tropical and subtropical deciduous forest & 0.44 & 0.93 &  1.95 \\
-María Magdalena-Islas Marías & Tropical and subtropical deciduous forest & 0.99 & 2.00 &  4.033 \\
-Monserrat-Bahía de Loreto &   Xeric scrub/Halophile vegetation & 0.75 & 1.58 &  3.32 \\
-Mujeres &      Semi-deciduous forest & 5.17 & 10.43 & 21.04 \\
-Redonda-Islas Marietas & Grassland & 4.47 & 9.37 & 19.64 \\
-San Benedicto-Revillagigedo &      Bare ground & 2.59 & 4.54 &  7.94 \\
-San Benito &     Matorral rosetófilo costero & 3.47 & 9.30 & 24.92 \\
-San Juanico-Islas &      Marías Deciduous forest & 1.91 & 47.83 & 80.35 \\
-Santa Catalina-Bahía de Loreto &    Xeric scrub/Halophile vegetation & 0.64 & 1.29 &  2.63 \\
-Socorro-Revillagigedo &         Bare ground & 8.66 & 16.83 & 32.72 \\
-Socorro-Revillagigedo &        Conifer forest & 5.10 & 7.85 & 12.07 \\
-Socorro-Revillagigedo &        Tropical scrub & 0.56 & 1.10 &  2.13 \\
-Socorro-Revillagigedo &       Tropical grassland & 0.60 & 1.09 &  2.00 \\
-Socorro-Revillagigedo &  Tropical deciduous latifolius forest & 0.44 & 0.81 &  1.52 \\
-Socorro-Revillagigedo &  Tropical evergreen latifolius forest & 0.27 & 0.46 &  0.76 \\
-Socorro-Revillagigedo &     Deciduous latifolius forest & 0.00 & 0.00 &  0.00 \\
-Tiburón &         Xeric scrub & 0.83 & 1.46 &  2.58 \\
-\hline
-\label{Tab:tab5} 
-\end{tabular}
-\end{adjustwidth}
+\csvautotabular{tables/tabla_5.csv,respect percent=true}
+\label{Tab:tab5}
 \end{table}
+
 
 
 \section{Discussion}

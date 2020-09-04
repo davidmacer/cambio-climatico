@@ -94,4 +94,5 @@ clean:
 	rm --force reports/*.aux
 	rm --force reports/*.out
 	rm --force reports/*.log
+	rm --force --recursive resultados/
 	rm --force --recursive reports/figures
